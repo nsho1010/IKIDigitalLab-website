@@ -14,7 +14,7 @@ const ComingSoon = () => {
         transition={{ duration: 0.6, delay: 0.3 }}
       >
         <h2 className="lg:text-6xl md:text-5xl sm:text-4xl text-4xl font-bold m-4">
-          COMING SOON
+          Coming Soon...
         </h2>
         <p className="lg:text-lg md:text-base font-medium text-center">
           現在、準備中です。

@@ -2,7 +2,7 @@ import { ConfigProps } from "../types/config";
 
 const config = {
   // 必須
-  appName: "IKI DX STUDIO",
+  appName: "IKI DX CAMP",
   // 必須: アプリの説明をSEOタグに記載するための設定
   appDescription:
     "私たちは、DX人材の養成と最新のテクノロジーで壱岐島のICT化を推進します。",

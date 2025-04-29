@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { submitContactForm, ContactFormState } from "@/actions/contact";
+import { Send, Mail, User, MessageSquare } from "lucide-react";
 
 export default function Component() {
   const initialState: ContactFormState = {
@@ -36,73 +37,102 @@ export default function Component() {
   }, [formState, toast]);
 
   return (
-    <section id="contact">
-      <div className="space-y-8 p-8">
-        <div className="space-y-2 text-center">
-          <h2 className="text-3xl font-bold tracking-tighter  decoration-1 underline-offset-8 border-b-2 border-cyan-600 inline-block">
-            Contact
+    <section
+      id="contact"
+      className="py-16 bg-gradient-to-b from-white to-gray-50"
+    >
+      <div className="max-w-4xl mx-auto px-8">
+        <div className="text-center mb-10">
+          <h2 className="relative inline-block text-4xl font-bold tracking-tight">
+            <span className="relative z-10">Contact</span>
+            <span className="absolute bottom-0 left-0 right-0 h-3 bg-cyan-600/20 z-0"></span>
           </h2>
-          <p className="mx-auto max-w-[700px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-muted-foreground">
-            お問い合わせ
-          </p>
-
-          <p className="text-muted-foreground">
+          <p className="mt-2 md:text-xl text-muted-foreground">お問い合わせ</p>
+          <p className="mt-4 text-muted-foreground">
             ご質問や相談事があれば、気軽にお問い合わせください。
           </p>
         </div>
-        <form
-          className="mx-auto max-w-xl space-y-4"
-          action={formDispatch}
-          noValidate
-        >
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div className="space-y-2">
-              <Label htmlFor="name">お名前</Label>
-              <Input id="name" name="name" placeholder="名前を入力" />
-              {formState.status === "error" && formState.fieldErrors.name && (
-                <div className="text-destructive">
-                  {formState.fieldErrors.name}
-                </div>
-              )}
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="email">メールアドレス</Label>
-              <Input
-                id="email"
-                name="email"
-                placeholder="メールアドレスを入力"
-                type="email"
-              />
-              {formState.status === "error" && formState.fieldErrors.email && (
-                <div className="text-destructive">
-                  {formState.fieldErrors.email}
-                </div>
-              )}
-            </div>
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="message">メッセージ</Label>
-            <Textarea
-              className="min-h-[120px]"
-              id="message"
-              name="message"
-              placeholder="メッセージを入力"
-            />
-            {formState.status === "error" && formState.fieldErrors.message && (
-              <div className="text-destructive">
-                {formState.fieldErrors.message}
+
+        <div className="bg-white rounded-xl shadow-sm p-8">
+          <form className="space-y-6" action={formDispatch} noValidate>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <div className="space-y-2">
+                <Label
+                  htmlFor="name"
+                  className="flex items-center gap-2 font-medium"
+                >
+                  <User className="w-4 h-4 text-cyan-600" />
+                  お名前
+                </Label>
+                <Input
+                  id="name"
+                  name="name"
+                  placeholder="名前を入力"
+                  className="border-gray-200 focus:border-cyan-500 focus:ring-cyan-500"
+                />
+                {formState.status === "error" && formState.fieldErrors.name && (
+                  <div className="text-destructive text-sm mt-1">
+                    {formState.fieldErrors.name}
+                  </div>
+                )}
               </div>
-            )}
-          </div>
-          <div className="flex justify-center ">
-            <Button
-              className="w-6/12 font-bold mt-10 bg-cyan-600 text-white hover:bg-cyan-600 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg"
-              type="submit"
-            >
-              送信
-            </Button>
-          </div>
-        </form>
+              <div className="space-y-2">
+                <Label
+                  htmlFor="email"
+                  className="flex items-center gap-2 font-medium"
+                >
+                  <Mail className="w-4 h-4 text-cyan-600" />
+                  メールアドレス
+                </Label>
+                <Input
+                  id="email"
+                  name="email"
+                  placeholder="メールアドレスを入力"
+                  type="email"
+                  className="border-gray-200 focus:border-cyan-500 focus:ring-cyan-500"
+                />
+                {formState.status === "error" &&
+                  formState.fieldErrors.email && (
+                    <div className="text-destructive text-sm mt-1">
+                      {formState.fieldErrors.email}
+                    </div>
+                  )}
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label
+                htmlFor="message"
+                className="flex items-center gap-2 font-medium"
+              >
+                <MessageSquare className="w-4 h-4 text-cyan-600" />
+                メッセージ
+              </Label>
+              <Textarea
+                className="min-h-[150px] border-gray-200 focus:border-cyan-500 focus:ring-cyan-500"
+                id="message"
+                name="message"
+                placeholder="メッセージを入力"
+              />
+              {formState.status === "error" &&
+                formState.fieldErrors.message && (
+                  <div className="text-destructive text-sm mt-1">
+                    {formState.fieldErrors.message}
+                  </div>
+                )}
+            </div>
+
+            <div className="flex justify-center pt-4">
+              <Button
+                className="px-8 py-3 font-medium bg-cyan-600 hover:bg-cyan-700 text-white shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md"
+                type="submit"
+              >
+                <Send className="w-4 h-4 mr-2" />
+                送信する
+              </Button>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   );

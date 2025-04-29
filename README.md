@@ -1,4 +1,4 @@
-# IKI DX STUDIO ホームページ
+# IKI DX CAMP ホームページ
 
 ## 始め方
 

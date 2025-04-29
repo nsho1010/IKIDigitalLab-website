@@ -3,6 +3,7 @@ import { getNewsList } from "@/lib/microcms";
 import Pagination from "@/components/ui/pagination";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { formatDate } from "@/lib/utils";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -35,7 +36,7 @@ const NewsListPage = async ({
   const totalPages = Math.ceil(data.totalCount / pageSize);
 
   return (
-    <main className="flex flex-col max-w-3xl mx-auto gap-4 lg:gap-8 py-20 lg:pt-24 px-8">
+    <main className="flex flex-col max-w-3xl mx-auto gap-4 lg:gap-8 py-20 lg:pt-24 px-8 min-h-screen">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -50,10 +51,10 @@ const NewsListPage = async ({
       <h1 className="text-4xl font-bold tracking-tight underline decoration-cyan-600 decoration-1 underline-offset-8 pt-10">
         お知らせ
       </h1>
-      <section className="w-full">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {data.contents.length > 0 ? (
-            data.contents.map((news) => (
+      <section className="w-full flex-grow">
+        {data.contents.length > 0 ? (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {data.contents.map((news) => (
               <Link key={news.id} href={`/news/${news.id}`}>
                 <Card key={news.id}>
                   <CardHeader>
@@ -72,21 +73,23 @@ const NewsListPage = async ({
                   </CardContent>
                 </Card>
               </Link>
-            ))
-          ) : (
-            // データがない場合はComing soon...を表示
-            <div className="sm:col-span-2 lg:col-span-3 flex justify-center items-center w-full pt-10">
-              <div className="bg-cyan-600 h-48 flex justify-center items-center w-full p-4 rounded-lg">
-                <p className="text-xl font-semibold text-center text-white">
-                  Coming soon...
-                </p>
-              </div>
-            </div>
-          )}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="flex flex-col items-center justify-center flex-grow py-20 text-gray-900">
+            <h2 className="lg:text-5xl md:text-4xl text-3xl font-bold mb-6">
+              Coming Soon...
+            </h2>
+            <p className="lg:text-lg md:text-base font-medium text-center">
+              現在、お知らせはありません。
+              <br />
+              公開までおまちください。
+            </p>
+          </div>
+        )}
       </section>
       {totalPages > 1 && (
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-8">
           <Pagination totalPages={totalPages} />
         </div>
       )}
