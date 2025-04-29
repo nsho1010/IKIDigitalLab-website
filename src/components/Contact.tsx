@@ -36,6 +36,18 @@ export default function Component() {
     }
   }, [formState, toast]);
 
+  // エラー表示用の関数
+  const renderError = (error: string[] | undefined) => {
+    if (error && error.length > 0) {
+      return (
+        <div className="text-destructive text-sm mt-1">
+          {Array.isArray(error) ? error[0] : error}
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
     <section
       id="contact"
@@ -70,11 +82,8 @@ export default function Component() {
                   placeholder="名前を入力"
                   className="border-gray-200 focus:border-cyan-500 focus:ring-cyan-500"
                 />
-                {formState.status === "error" && formState.fieldErrors.name && (
-                  <div className="text-destructive text-sm mt-1">
-                    {formState.fieldErrors.name}
-                  </div>
-                )}
+                {formState.status === "error" &&
+                  renderError(formState.fieldErrors?.name)}
               </div>
               <div className="space-y-2">
                 <Label
@@ -92,11 +101,7 @@ export default function Component() {
                   className="border-gray-200 focus:border-cyan-500 focus:ring-cyan-500"
                 />
                 {formState.status === "error" &&
-                  formState.fieldErrors.email && (
-                    <div className="text-destructive text-sm mt-1">
-                      {formState.fieldErrors.email}
-                    </div>
-                  )}
+                  renderError(formState.fieldErrors?.email)}
               </div>
             </div>
 
@@ -115,11 +120,7 @@ export default function Component() {
                 placeholder="メッセージを入力"
               />
               {formState.status === "error" &&
-                formState.fieldErrors.message && (
-                  <div className="text-destructive text-sm mt-1">
-                    {formState.fieldErrors.message}
-                  </div>
-                )}
+                renderError(formState.fieldErrors?.message)}
             </div>
 
             <div className="flex justify-center pt-4">
