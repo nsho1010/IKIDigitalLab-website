@@ -23,10 +23,10 @@ const serviceData = [
   {
     name: "プログラミングスクール",
     description:
-      "学びの場も提供しています。基礎から実務まで、壱岐で“使える”スキルを身につけたい方向けです（詳細は別ページ）。",
+      "学びの場も提供しています。基礎から実務まで、壱岐で使えるスキルを身につけたい方向けです（詳細は別ページ）。",
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    url: "#",
+    url: "/coming-soon",
   },
   {
     name: "企業・団体向けIT研修",
@@ -96,9 +96,9 @@ const Service = () => {
                       {service.description}
                     </p>
 
-                    {service.url && (
+                    {service.url && service.name === "プログラミングスクール" && (
                       <div className="mt-4 pt-4 border-t border-gray-100 text-sm font-medium text-cyan-600 flex items-center justify-end">
-                        詳細を見る
+                        サービスページへ
                         <svg
                           className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1"
                           xmlns="http://www.w3.org/2000/svg"
