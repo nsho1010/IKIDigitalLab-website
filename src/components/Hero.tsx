@@ -26,7 +26,7 @@ const Hero = () => {
   return (
     <motion.section
       id="hero"
-      className="flex flex-col-reverse lg:flex-row items-center justify-center max-w-7xl mx-auto sm:gap-8 md:gap-16 lg:gap-24 pt-16 lg:pt-28 pb-0 px-4 lg:px-8 min-h-[70vh]"
+      className="flex flex-col-reverse lg:flex-row items-center justify-center max-w-7xl mx-auto sm:gap-8 md:gap-16 lg:gap-24 pt-24 lg:pt-40 pb-0 px-4 lg:px-8 min-h-[70vh]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
