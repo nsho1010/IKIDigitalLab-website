@@ -29,14 +29,14 @@ const Header = () => {
     // 同時に複数のアニメーションを開始
     await Promise.all([
       controls1.start({
-        rotate: clicked ? 0 : 220, // クリックされている場合は0度に戻し、そうでない場合は45度回転
-        y: clicked ? 0 : 6, // クリックされている場合は0に戻し、そうでない場合は6に移動
+        rotate: clicked ? 0 : 45, // クリックされている場合は0度に戻し、そうでない場合は45度回転
+        y: clicked ? 0 : 7, // クリックされている場合は0に戻し、そうでない場合は7に移動
         opacity: clicked ? 1 : 1,
         transition: { duration: 0.4 },
       }),
       controls2.start({
-        rotate: clicked ? 0 : -220, // クリックされている場合は0度に戻し、そうでない場合は-45度回転
-        y: clicked ? 0 : -6, // クリックされている場合は0に戻し、そうでない場合は-6に移動
+        rotate: clicked ? 0 : -45, // クリックされている場合は0度に戻し、そうでない場合は-45度回転
+        y: clicked ? 0 : -7, // クリックされている場合は0に戻し、そうでない場合は-7に移動
         opacity: clicked ? 1 : 1, // クリックされている場合は1に戻し、そうでない場合は0にする
         transition: { duration: 0.4 },
       }),
@@ -63,11 +63,17 @@ const Header = () => {
           title={`${config.appName}`}
           className="flex items-center gap-2 shrink-0"
         >
-          <Image alt="Logo" src="/logo-preview.png" width={80} height={80} />
-          <span className="font-extrabold lg:text-4xl md:text-3xl text-2xl text-foreground">
+          <Image
+            alt="Logo"
+            src="/logo-preview.png"
+            width={60}
+            height={60}
+            className="object-contain"
+          />
+          <span className="font-extrabold lg:text-4xl md:text-3xl text-xl sm:text-2xl text-foreground leading-tight">
             {/* {config.appName} */}
             {/* DX・AIサポート IKI | DAIVe */}
-            DX・AIサポート
+            DX・AIサポート IKI
           </span>
         </Link>
 
@@ -161,26 +167,28 @@ const Header = () => {
 
         {/* モバイルーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */}
 
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center">
           <motion.div
             onClick={() => startAnimation()}
-            className="relative z-50"
+            className="relative z-50 flex flex-col justify-center"
           >
             <motion.div
               className={
                 isOpen
-                  ? "w-8 h-0.5 bg-slate-50  my-2.5"
-                  : "w-8 h-0.5  bg-[#20214d] my-2.5"
+                  ? "w-8 h-0.5 bg-slate-50  my-1.5"
+                  : "w-8 h-0.5  bg-[#20214d] my-1.5"
               }
               animate={controls1}
+              style={{ transformOrigin: "50% 50%" }}
             ></motion.div>
             <motion.div
               className={
                 isOpen
-                  ? "w-8 h-0.5 bg-slate-50  my-2.5"
-                  : "w-8 h-0.5  bg-[#20214d] my-2.5"
+                  ? "w-8 h-0.5 bg-slate-50  my-1.5"
+                  : "w-8 h-0.5  bg-[#20214d] my-1.5"
               }
               animate={controls2}
+              style={{ transformOrigin: "50% 50%" }}
             ></motion.div>
           </motion.div>
 
@@ -195,12 +203,25 @@ const Header = () => {
                 transition={{ duration: 0.4 }}
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="absolute top-0 right-0 w-full h-full  p-4 z-30 bg-cyan-600">
-                  <Link href="/" title={`${config.appName}`}>
-                    <span className="font-extrabold text-2xl text-foreground text-slate-50">
-                      {config.appName}
-                    </span>
-                  </Link>
+                <div className="absolute top-0 right-0 w-full h-full z-30 bg-cyan-600">
+                  <div className="flex justify-between items-center px-4 py-4">
+                    <Link
+                      href="/"
+                      title={`${config.appName}`}
+                      className="flex items-center gap-2"
+                    >
+                      <Image
+                        alt="Logo"
+                        src="/logo-preview-white.png"
+                        width={60}
+                        height={60}
+                        className="object-contain"
+                      />
+                      <span className="font-extrabold text-xl text-foreground text-slate-50">
+                        DX・AIサポート IKI
+                      </span>
+                    </Link>
+                  </div>
 
                   <div className="py-16  px-4">
                     <nav className="space-y-8 ">
@@ -211,14 +232,27 @@ const Header = () => {
                       >
                         <p className="">トップ</p>
                       </Link>
-                      <Link
-                        href="#service"
-                        target=""
-                        className="link link-hover block text-base font-semibold text-slate-50 border-b-1 pb-2"
-                        onClick={() => startAnimation()}
-                      >
-                        <p className="">サービス</p>
-                      </Link>
+
+                      {pathname == "/" ? (
+                        <Scroll
+                          to="#service"
+                          smooth={true}
+                          offset={-40}
+                          onClick={() => startAnimation()}
+                          className="link link-hover block text-base font-semibold text-slate-50 hover:text-primary cursor-pointer border-b-1 pb-2"
+                        >
+                          サービス
+                        </Scroll>
+                      ) : (
+                        <Link
+                          href="/"
+                          className="link link-hover block text-base font-semibold text-slate-50 hover:text-primary cursor-pointer border-b-1 pb-2"
+                          onClick={() => startAnimation()}
+                        >
+                          サービス
+                        </Link>
+                      )}
+
                       <Link
                         href="/coming-soon"
                         target=""
