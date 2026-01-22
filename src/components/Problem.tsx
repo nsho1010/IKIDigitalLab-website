@@ -36,7 +36,7 @@ const Problem = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
-      className="py-16"
+      className="py-16 bg-gray-50"
     >
       <div className="max-w-6xl mx-auto px-8">
         <div className="text-center mb-12">
@@ -45,7 +45,7 @@ const Problem = () => {
             をサポートします
           </h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground">
-            離島でのIT活用には多くの課題があります。 DX・AIサポート IKI by
+            離島でのIT活用には多くの課題があります。 DX・AIサポート IKI |
             DAIVeは、業務改善とAI活用を軸に、壱岐島にDXが根づく支援を行います。
           </p>
         </div>

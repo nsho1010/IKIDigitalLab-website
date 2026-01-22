@@ -101,7 +101,7 @@ const PrivacyPolicyPage = () => {
           <p>
             個人情報の取り扱いに関するお問い合わせは、以下までご連絡ください。
             <br />
-            DX・AIサポート IKI by DAIVe（運営者）
+            DX・AIサポート IKI | DAIVe（運営者）
             <br />
             所在地：長崎県壱岐市
             <br />

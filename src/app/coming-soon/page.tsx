@@ -19,7 +19,7 @@ const ComingSoon = () => {
         <p className="lg:text-lg md:text-base font-medium text-center">
           現在、準備中です。
           <br />
-          公開までおまちください。
+          公開までお待ちください。
         </p>
         <div className="flex justify-center ">
           <Link

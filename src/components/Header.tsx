@@ -111,7 +111,7 @@ const Header = () => {
             </Link>
           )}
           <Link href="/coming-soon" target="" className="hover:underline">
-            IT教育
+            スキル習得
           </Link>
           {pathname == "/" ? (
             <Scroll
@@ -267,7 +267,7 @@ const Header = () => {
                         className="link link-hover block text-base font-semibold text-slate-50 border-b-1 pb-2"
                         onClick={() => startAnimation()}
                       >
-                        <p className="">IT教育</p>
+                        <p className="">スキル習得</p>
                       </Link>
 
                       {pathname == "/" ? (

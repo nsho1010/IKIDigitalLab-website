@@ -10,7 +10,7 @@ const News = async () => {
   });
 
   return (
-    <section id="news" className="py-12 bg-gradient-to-t from-white to-gray-50">
+    <section id="news" className="py-12 bg-white">
       <div className="flex flex-col items-center justify-center gap-6 lg:gap-10 p-8 w-full max-w-7xl mx-auto">
         <div className="w-full flex flex-col items-center">
           <Link

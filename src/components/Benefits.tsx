@@ -33,7 +33,7 @@ const Benefits = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4, delay: 0.3 }}
-      className="py-16 bg-gradient-to-b from-white to-gray-50"
+      className="py-16 bg-white"
     >
       <div className="max-w-7xl mx-auto px-8">
         <div className="flex flex-col items-center justify-center space-y-12 text-center">

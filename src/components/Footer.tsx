@@ -76,7 +76,7 @@ const Footer = () => {
                   target="_brank"
                   className="hover:underline"
                 >
-                  IT教育
+                  スキル習得
                 </Link>
                 {pathname == "/" ? (
                   <Scroll

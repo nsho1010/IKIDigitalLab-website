@@ -7,13 +7,13 @@ const members = [
     role: "代表 / Webエンジニア・DX推進",
     description: "ベンチャー・スタートアップ企業にてWebエンジニアとして従事。",
     image: "/myprofileimage.PNG",
-    skills: ["Web開発", "DX推進", "IT教育", "業務改善"],
+    skills: ["Web開発", "DX推進", "スキル習得", "業務改善"],
   },
 ];
 
 const Member = () => {
   return (
-    <section className="py-16">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-5xl mx-auto px-8">
         <div className="text-center mb-12">
           <h2 className="relative inline-block text-4xl font-bold tracking-tight">

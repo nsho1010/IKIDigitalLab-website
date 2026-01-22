@@ -80,7 +80,7 @@ const NewsListPage = async ({
             <p className="lg:text-lg md:text-base font-medium text-center">
               現在、お知らせはありません。
               <br />
-              公開までおまちください。
+              公開までお待ちください。
             </p>
           </div>
         )}
