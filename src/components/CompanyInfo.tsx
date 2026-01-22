@@ -35,7 +35,7 @@ const CompanyInfo = () => {
           </div>
 
           <div className="w-full lg:w-1/2">
-            <h3 className="text-2xl font-bold mb-6">{companyInfoData.name}</h3>
+            <h3 className="text-xl font-bold mb-6">{companyInfoData.name}</h3>
 
             <dl className="space-y-6">
               <div className="flex items-center gap-3">

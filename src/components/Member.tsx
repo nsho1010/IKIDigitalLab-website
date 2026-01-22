@@ -50,9 +50,9 @@ const Member = () => {
 
               <div className="flex flex-col space-y-4 text-center md:text-left">
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900">
+                  <p className="text-lg font-bold text-gray-900">
                     {member.name}
-                  </h3>
+                  </p>
                   <p className="text-cyan-700 font-medium">{member.role}</p>
                 </div>
 
