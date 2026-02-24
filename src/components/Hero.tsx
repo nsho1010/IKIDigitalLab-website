@@ -41,7 +41,7 @@ const Hero = () => {
           </span>
           で加速する
         </h1>
-        <p className="text-xl md:text-xl text-muted-foreground leading-relaxed">
+        <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed">
           業務改善・AI活用・内製化から、必要に応じたWeb受託開発まで、壱岐の事業者に寄り添って伴走します。
         </p>
         <Scroll to="contact" smooth={true} offset={-100}>
