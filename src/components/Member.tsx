@@ -16,7 +16,7 @@ const Member = () => {
     <section className="py-16 bg-gray-50">
       <div className="max-w-5xl mx-auto px-8">
         <div className="text-center mb-12">
-          <h2 className="relative inline-block text-4xl font-bold tracking-tight">
+          <h2 className="relative inline-block text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
             <span className="relative z-10">Member</span>
             <span className="absolute bottom-0 left-0 right-0 h-3 bg-cyan-600/20 z-0" />
           </h2>
@@ -38,8 +38,8 @@ const Member = () => {
                   <Image
                     alt={member.name}
                     src={member.image}
-                    width={220}
-                    height={220}
+                    width={160}
+                    height={160}
                     className="aspect-square object-cover"
                   />
                 </div>
@@ -58,7 +58,7 @@ const Member = () => {
                   </p>
                 </div>
 
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 text-sm md:text-base lg:text-base leading-relaxed">
                   {member.description}
                 </p>
 

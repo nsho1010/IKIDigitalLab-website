@@ -105,7 +105,7 @@ export default function Component() {
     >
       <div className="max-w-4xl mx-auto px-8">
         <div className="text-center mb-10">
-          <h2 className="relative inline-block text-4xl font-bold tracking-tight">
+          <h2 className="relative inline-block text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
             <span className="relative z-10">Contact</span>
             <span className="absolute bottom-0 left-0 right-0 h-3 bg-cyan-600/20 z-0"></span>
           </h2>
