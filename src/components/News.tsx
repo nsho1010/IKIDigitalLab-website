@@ -23,7 +23,7 @@ const News = async () => {
             </h2>
             <ChevronRight className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
-          <p className="mt-2 md:text-xl/relaxed lg:text-xl/relaxed text-muted-foreground">
+          <p className="mt-2 md:text-lg/relaxed lg:text-lg/relaxed text-muted-foreground">
             お知らせ
           </p>
         </div>

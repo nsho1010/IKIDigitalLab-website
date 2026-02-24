@@ -56,7 +56,7 @@ const Service = () => {
             <span className="relative z-10">Service</span>
             <span className="absolute bottom-0 left-0 right-0 h-3 bg-cyan-600/20 z-0"></span>
           </h2>
-          <p className="mx-auto max-w-[700px] md:text-xl/relaxed lg:text-xl/relaxed xl:text-xl/relaxed text-muted-foreground">
+          <p className="mx-auto max-w-[700px] md:text-lg/relaxed lg:text-lg/relaxed text-muted-foreground">
             DX・AI活用とWeb制作・開発、プログラミング教育をご提供。
           </p>
         </motion.div>

@@ -20,7 +20,7 @@ const Member = () => {
             <span className="relative z-10">Member</span>
             <span className="absolute bottom-0 left-0 right-0 h-3 bg-cyan-600/20 z-0" />
           </h2>
-          <p className="mt-3 text-lg text-muted-foreground">
+          <p className="mt-3 text-base md:text-lg lg:text-lg text-muted-foreground">
             運営・開発メンバー
           </p>
         </div>

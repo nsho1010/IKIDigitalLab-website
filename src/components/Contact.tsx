@@ -109,7 +109,9 @@ export default function Component() {
             <span className="relative z-10">Contact</span>
             <span className="absolute bottom-0 left-0 right-0 h-3 bg-cyan-600/20 z-0"></span>
           </h2>
-          <p className="mt-2 md:text-xl text-muted-foreground">お問い合わせ</p>
+          <p className="mt-2 text-base md:text-lg lg:text-lg text-muted-foreground">
+            お問い合わせ
+          </p>
           <p className="mt-4 text-muted-foreground">
             ご質問や相談事があれば、気軽にお問い合わせください。
           </p>
