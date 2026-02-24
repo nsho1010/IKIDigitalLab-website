@@ -72,10 +72,7 @@ const Header = () => {
           />
           <div className="flex flex-col">
             <span className="font-extrabold lg:text-3xl md:text-2xl text-lg sm:text-xl text-foreground leading-tight">
-              DX・AIサポート
-            </span>
-            <span className="font-extrabold lg:text-3xl md:text-2xl text-lg sm:text-xl text-foreground leading-tight">
-              IKI | DAIVe
+              IKI Digital Lab.
             </span>
           </div>
         </Link>
@@ -222,10 +219,7 @@ const Header = () => {
                       />
                       <div className="flex flex-col">
                         <span className="font-extrabold text-base text-foreground text-slate-50 leading-tight">
-                          DX・AIサポート
-                        </span>
-                        <span className="font-extrabold text-base text-foreground text-slate-50 leading-tight">
-                          IKI | DAIVe
+                          IKI Digital Lab.
                         </span>
                       </div>
                     </Link>

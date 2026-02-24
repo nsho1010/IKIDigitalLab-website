@@ -1,7 +1,7 @@
 import { MapPin, User, Briefcase } from "lucide-react";
 
 const companyInfoData = {
-  name: "DX・AIサポート IKI｜DAIVe",
+  name: "IKI Digital Lab.",
   location: "長崎県壱岐市",
   established: "2026年1月",
   president: "永村 奨平",
