@@ -14,7 +14,7 @@ const CompanyInfo = () => {
     <section id="company-info" className="py-16">
       <div className="max-w-6xl mx-auto px-8">
         <div className="flex flex-col items-center justify-center space-y-8 mb-10">
-          <h2 className="relative inline-block text-4xl font-bold tracking-tight">
+          <h2 className="relative inline-block text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
             <span className="relative z-10">運営概要</span>
             <span className="absolute bottom-0 left-0 right-0 h-3 bg-cyan-600/20 z-0"></span>
           </h2>

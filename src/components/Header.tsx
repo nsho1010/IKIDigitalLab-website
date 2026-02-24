@@ -71,7 +71,7 @@ const Header = () => {
             className="object-contain"
           />
           <div className="flex flex-col">
-            <span className="font-extrabold lg:text-3xl md:text-2xl text-lg sm:text-xl text-foreground leading-tight">
+            <span className="font-extrabold text-2xl md:text-2xl lg:text-3xl text-foreground leading-tight">
               IKI Digital Lab.
             </span>
           </div>
@@ -218,7 +218,7 @@ const Header = () => {
                         className="object-contain"
                       />
                       <div className="flex flex-col">
-                        <span className="font-extrabold text-base text-foreground text-slate-50 leading-tight">
+                        <span className="font-extrabold text-2xl md:text-2xl lg:text-3xl text-foreground text-slate-50 leading-tight">
                           IKI Digital Lab.
                         </span>
                       </div>

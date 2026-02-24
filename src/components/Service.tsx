@@ -52,7 +52,7 @@ const Service = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold tracking-tight relative inline-block">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight relative inline-block">
             <span className="relative z-10">Service</span>
             <span className="absolute bottom-0 left-0 right-0 h-3 bg-cyan-600/20 z-0"></span>
           </h2>
