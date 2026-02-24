@@ -8,7 +8,7 @@ const config = {
     "業務改善・AI活用・内製化から、必要に応じたWeb受託開発まで、壱岐の事業者に寄り添って伴走します。",
   // 必須: ドメイン名 (no https://, not trialing slash at the end, just the naked domain)
   // domainName: "test.vercel.app",
-  domainName: "daive-iki.vercel.app",
+  domainName: "iki-digital.vercel.app/",
   // twitterのユーザー名
   twitter: "",
   // HeaderとFooterで表示するリンク
