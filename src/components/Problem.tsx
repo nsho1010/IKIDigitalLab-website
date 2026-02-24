@@ -45,7 +45,9 @@ const Problem = () => {
             をサポートします
           </h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground">
-            離島でのIT活用には多くの課題があります。 IKI Digital
+            離島でのIT活用には多くの課題があります。
+            <br />
+            IKI Digital
             Lab.は、業務改善とAI活用を軸に、壱岐島にDXが根づく支援を行います。
           </p>
         </div>

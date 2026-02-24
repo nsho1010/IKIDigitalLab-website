@@ -32,7 +32,7 @@ const Hero = () => {
       transition={{ duration: 0.6 }}
     >
       <div className="flex flex-col gap-6 lg:gap-8 items-center justify-center text-center lg:text-left lg:items-start p-4 md:p-0 max-w-2xl">
-        <h1 className="font-extrabold text-5xl md:text-6xl lg:text-7xl tracking-tight text-balance">
+        <h1 className="font-extrabold text-4xl md:text-5xl lg:text-6xl tracking-tight text-balance">
           離島の未来を
           <span className="inline-block bg-foreground mx-1 px-3 -rotate-1">
             <span className="inline-block text-background rotate-1">
@@ -41,7 +41,7 @@ const Hero = () => {
           </span>
           で加速する
         </h1>
-        <p className="text-xl md:text-xl text-muted-foreground leading-relaxed">
+        <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed">
           業務改善・AI活用・内製化から、必要に応じたWeb受託開発まで、壱岐の事業者に寄り添って伴走します。
         </p>
         <Scroll to="contact" smooth={true} offset={-100}>

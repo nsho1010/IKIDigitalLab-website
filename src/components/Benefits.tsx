@@ -47,7 +47,7 @@ const Benefits = () => {
               <span className="text-cyan-600">DX・AI活用</span>
               を伴走支援します
             </h2>
-            <p className="mx-auto max-w-[700px] text-muted-foreground text-lg">
+            <p className="mx-auto max-w-[700px] text-muted-foreground text-sm md:text-base">
               業務改善からAI活用、定着・内製化まで一緒に進めます。
             </p>
           </motion.div>

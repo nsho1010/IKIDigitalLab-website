@@ -20,7 +20,7 @@ const Member = () => {
             <span className="relative z-10">Member</span>
             <span className="absolute bottom-0 left-0 right-0 h-3 bg-cyan-600/20 z-0" />
           </h2>
-          <p className="mt-3 text-lg text-muted-foreground">
+          <p className="mt-3 text-base md:text-lg lg:text-lg text-muted-foreground">
             運営・開発メンバー
           </p>
         </div>
@@ -50,10 +50,12 @@ const Member = () => {
 
               <div className="flex flex-col space-y-4 text-center md:text-left">
                 <div>
+                  <p className="text-sm text-cyan-700 font-medium">
+                    {member.role}
+                  </p>
                   <p className="text-lg font-bold text-gray-900">
                     {member.name}
                   </p>
-                  <p className="text-cyan-700 font-medium">{member.role}</p>
                 </div>
 
                 <p className="text-gray-600 leading-relaxed">

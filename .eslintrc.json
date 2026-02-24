@@ -11,7 +11,7 @@
     "@typescript-eslint/no-unsafe-call": "error",
     "@typescript-eslint/no-unsafe-member-access": "error",
     "@typescript-eslint/no-unsafe-return": "error",
-    // インデントルールを4スペースから2スペースに変更
-    "@stylistic/indent": ["error", 2]
+    // 保存時フォーマッタとの競合を避けるためインデントチェックは無効化
+    "@stylistic/indent": "off"
   }
 }
