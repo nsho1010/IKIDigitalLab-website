@@ -13,7 +13,7 @@ const ComingSoon = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.3 }}
       >
-        <h2 className="lg:text-4xl md:text-5xl sm:text-4xl text-4xl font-bold m-4">
+        <h2 className="text-2xl md:text-2xl lg:text-3xl font-bold m-4">
           Coming Soon...
         </h2>
         <p className="lg:text-lg md:text-base font-medium text-center">

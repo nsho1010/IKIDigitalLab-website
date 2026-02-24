@@ -43,7 +43,7 @@ const Benefits = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+            <h2 className="text-2xl md:text-2xl lg:text-3xl font-bold tracking-tight">
               <span className="text-cyan-600">DX・AI活用</span>
               を伴走支援します
             </h2>
