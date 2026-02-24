@@ -22,8 +22,8 @@ const Footer = () => {
               <Image
                 alt="Logo"
                 src="/logo-preview-white.png"
-                width={80}
-                height={80}
+                width={50}
+                height={50}
               />
 
               <div className="flex flex-col">
