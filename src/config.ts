@@ -2,7 +2,7 @@ import { ConfigProps } from "../types/config";
 
 const config = {
   // 必須
-  appName: "DX・AIサポート IKI｜DAIVe",
+  appName: "IKI Digital Lab.",
   // 必須: アプリの説明をSEOタグに記載するための設定
   appDescription:
     "業務改善・AI活用・内製化から、必要に応じたWeb受託開発まで、壱岐の事業者に寄り添って伴走します。",

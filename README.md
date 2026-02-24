@@ -1,4 +1,4 @@
-# DX・AIサポート IKI｜DAIVe Webサイト
+# IKI Digital Lab. Webサイト
 
 ## 始め方
 

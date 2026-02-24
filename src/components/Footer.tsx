@@ -28,10 +28,7 @@ const Footer = () => {
 
               <div className="flex flex-col">
                 <strong className="font-extrabold tracking-tight text-base md:text-lg leading-tight">
-                  DX・AIサポート
-                </strong>
-                <strong className="font-extrabold tracking-tight text-base md:text-lg leading-tight">
-                  IKI | DAIVe
+                  IKI Digital Lab.
                 </strong>
               </div>
             </Link>
