@@ -15,7 +15,7 @@ const serviceData = [
   {
     name: "Web制作・開発",
     description:
-      "集客サイトから業務用Webアプリまで。目的設計→制作→公開後の改善まで、壱岐の事業に合う形でスピーディに実装します。",
+      "コーポレートサイトから業務用Webアプリまで。目的設計→制作→公開後の改善まで、壱岐の事業に合う形でスピーディに実装します。",
     image:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     url: "/coming-soon",
@@ -23,7 +23,7 @@ const serviceData = [
   {
     name: "プログラミングスクール",
     description:
-      "学びの場も提供しています。基礎から実務まで、壱岐で使えるスキルを身につけたい方向けです（詳細は別ページ）。",
+      "学びの場も提供しています。基礎から実務まで、壱岐で使えるスキルを身につけたい方向け。",
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     url: "/coming-soon",
@@ -96,23 +96,24 @@ const Service = () => {
                       {service.description}
                     </p>
 
-                    {service.url && service.name === "プログラミングスクール" && (
-                      <div className="mt-4 pt-4 border-t border-gray-100 text-sm font-medium text-cyan-600 flex items-center justify-end">
-                        サービスページへ
-                        <svg
-                          className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </div>
-                    )}
+                    {service.url &&
+                      service.name === "プログラミングスクール" && (
+                        <div className="mt-4 pt-4 border-t border-gray-100 text-sm font-medium text-cyan-600 flex items-center justify-end">
+                          サービスページへ
+                          <svg
+                            className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                      )}
                   </div>
                 </div>
               </Link>
