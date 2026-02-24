@@ -40,7 +40,7 @@ const Problem = () => {
     >
       <div className="max-w-6xl mx-auto px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">
+          <h2 className="text-2xl md:text-2xl lg:text-3xl font-bold mb-4">
             <span className="text-cyan-600">IT・業務改善・AI活用支援</span>
             をサポートします
           </h2>
