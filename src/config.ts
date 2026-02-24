@@ -23,7 +23,7 @@ const config = {
     },
     {
       href: "",
-      label: "スキル習得",
+      label: "学ぶ",
     },
     {
       href: "/#news",

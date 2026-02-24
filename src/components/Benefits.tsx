@@ -44,7 +44,7 @@ const Benefits = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              壱岐の<span className="text-cyan-600">DX・AI活用</span>
+              <span className="text-cyan-600">DX・AI活用</span>
               を伴走支援します
             </h2>
             <p className="mx-auto max-w-[700px] text-muted-foreground text-lg">

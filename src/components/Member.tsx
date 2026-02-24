@@ -7,7 +7,7 @@ const members = [
     role: "代表 / Webエンジニア・DX推進",
     description: "ベンチャー・スタートアップ企業にてWebエンジニアとして従事。",
     image: "/myprofileimage.PNG",
-    skills: ["Web開発", "DX推進", "スキル習得", "業務改善"],
+    skills: ["Web開発", "DX推進", "学ぶ", "業務改善"],
   },
 ];
 

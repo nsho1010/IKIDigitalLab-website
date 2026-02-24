@@ -73,7 +73,7 @@ const Footer = () => {
                   target="_brank"
                   className="hover:underline"
                 >
-                  スキル習得
+                  学ぶ
                 </Link>
                 {pathname == "/" ? (
                   <Scroll
