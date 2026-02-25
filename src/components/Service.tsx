@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { featureFlags, getServiceUrl } from "@/lib/featureFlags";
 
 const serviceData = [
   {
@@ -10,7 +11,7 @@ const serviceData = [
       "業務改善からAI活用、運用の定着まで。現場に合わせて小さく始め、成果が出る形に整える伴走型サポートです。",
     image:
       "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    url: "/coming-soon",
+    url: getServiceUrl(featureFlags.dxAiSupport, "/services/dx-ai-support"),
   },
   {
     name: "Web制作・開発",
@@ -18,7 +19,10 @@ const serviceData = [
       "コーポレートサイトから業務用Webアプリまで。目的設計→制作→公開後の改善まで、壱岐の事業に合う形でスピーディに実装します。",
     image:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    url: "/coming-soon",
+    url: getServiceUrl(
+      featureFlags.webDevelopment,
+      "/services/web-development",
+    ),
   },
   {
     name: "プログラミングスクール",
@@ -26,7 +30,10 @@ const serviceData = [
       "学びの場も提供しています。基礎から実務まで、壱岐で使えるスキルを身につけたい方向け。",
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    url: "/coming-soon",
+    url: getServiceUrl(
+      featureFlags.programmingSchool,
+      "/services/programming-school",
+    ),
   },
   {
     name: "企業・団体向けIT研修",
@@ -34,7 +41,7 @@ const serviceData = [
       "必要なテーマだけを短時間で。DX・AI活用を現場に落とし込むための研修を、伴走支援の一部として提供します。",
     image:
       "https://images.unsplash.com/photo-1614064548237-096f735f344f?q=80&w=1080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    url: "/coming-soon",
+    url: getServiceUrl(featureFlags.itTraining, "/services/it-training"),
   },
 ];
 
@@ -96,24 +103,23 @@ const Service = () => {
                       {service.description}
                     </p>
 
-                    {service.url &&
-                      service.name === "プログラミングスクール" && (
-                        <div className="mt-4 pt-4 border-t border-gray-100 text-sm font-medium text-cyan-600 flex items-center justify-end">
-                          サービスページへ
-                          <svg
-                            className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                        </div>
-                      )}
+                    {!service.url.includes("/coming-soon") && (
+                      <div className="mt-4 pt-4 border-t border-gray-100 text-sm font-medium text-cyan-600 flex items-center justify-end">
+                        サービスページへ
+                        <svg
+                          className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                    )}
                   </div>
                 </div>
               </Link>
