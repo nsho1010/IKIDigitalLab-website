@@ -78,51 +78,75 @@ const Service = () => {
               viewport={{ once: true }}
               className="group"
             >
-              <Link href={service.url || "#"} className="block h-full">
-                <div className="relative overflow-hidden rounded-xl shadow-lg h-full bg-white border-0 transition-all duration-300 hover:shadow-xl group-hover:translate-y-[-8px]">
-                  {/* 画像部分 */}
-                  <div className="relative h-56 overflow-hidden">
-                    <Image
-                      alt={service.name || "Service Image"}
-                      src={service.image}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      priority={index === 0}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
-
-                  {/* コンテンツ部分 */}
-                  <div className="p-6">
-                    {service.name && (
-                      <h3 className="text-xl font-bold mb-2 text-gray-900 group-hover:text-cyan-600 transition-colors">
-                        {service.name}
-                      </h3>
-                    )}
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {service.description}
-                    </p>
-
-                    {!service.url.includes("/coming-soon") && (
-                      <div className="mt-4 pt-4 border-t border-gray-100 text-sm font-medium text-cyan-600 flex items-center justify-end">
-                        サービスページへ
-                        <svg
-                          className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+              <div className={`block h-full ${service.url ? "cursor-pointer" : "cursor-default"}`}>
+                {service.url ? (
+                  <Link href={service.url} className="block h-full">
+                    <div className="relative overflow-hidden rounded-xl shadow-lg h-full bg-white border-0 transition-all duration-300 hover:shadow-xl group-hover:translate-y-[-8px]">
+                      {/* 画像部分 */}
+                      <div className="relative h-56 overflow-hidden">
+                        <Image
+                          alt={service.name || "Service Image"}
+                          src={service.image}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-110"
+                          priority={index === 0}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       </div>
-                    )}
+                      {/* コンテンツ部分 */}
+                      <div className="p-6">
+                        {service.name && (
+                          <h3 className="text-xl font-bold mb-2 text-gray-900 group-hover:text-cyan-600 transition-colors">
+                            {service.name}
+                          </h3>
+                        )}
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          {service.description}
+                        </p>
+                        <div className="mt-4 pt-4 border-t border-gray-100 text-sm font-medium text-cyan-600 flex items-center justify-end">
+                          サービスページへ
+                          <svg
+                            className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ) : (
+                  <div className="relative overflow-hidden rounded-xl shadow-lg h-full bg-white border-0">
+                    {/* 画像部分 */}
+                    <div className="relative h-56 overflow-hidden">
+                      <Image
+                        alt={service.name || "Service Image"}
+                        src={service.image}
+                        fill
+                        className="object-cover"
+                        priority={index === 0}
+                      />
+                    </div>
+                    {/* コンテンツ部分 */}
+                    <div className="p-6">
+                      {service.name && (
+                        <h3 className="text-xl font-bold mb-2 text-gray-900">
+                          {service.name}
+                        </h3>
+                      )}
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        {service.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </Link>
+                )}
+              </div>
             </motion.div>
           ))}
         </div>

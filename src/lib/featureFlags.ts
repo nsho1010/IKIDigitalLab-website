@@ -14,8 +14,10 @@ export const featureFlags = {
 } as const;
 
 /**
- * フラグが有効ならサービスURL、無効なら /coming-soon を返す
+ * フラグが有効ならサービスURL、無効なら null を返す
+ * 無効時に /coming-soon へリダイレクトする処理は一時停止中
  */
-export function getServiceUrl(enabled: boolean, serviceUrl: string): string {
-  return enabled ? serviceUrl : "/coming-soon";
+export function getServiceUrl(enabled: boolean, serviceUrl: string): string | null {
+  return enabled ? serviceUrl : null;
+  // return enabled ? serviceUrl : "/coming-soon";
 }
