@@ -65,7 +65,7 @@ const News = async () => {
             ))
           ) : (
             <div className="sm:col-span-2 lg:col-span-3 flex justify-center items-center w-full">
-              <div className="overflow-hidden rounded-xl shadow-lg bg-gradient-to-r from-cyan-500 to-cyan-600 h-48 md:h-64 flex justify-center items-center w-full">
+              <div className="overflow-hidden rounded-xl shadow-lg bg-gradient-to-r from-cyan-600 to-cyan-600 h-48 md:h-64 flex justify-center items-center w-full">
                 <div className="text-center px-8 py-12">
                   <p className="text-2xl md:text-2xl lg:text-3xl font-bold text-white mb-4">
                     Coming soon...
