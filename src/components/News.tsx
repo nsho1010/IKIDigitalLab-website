@@ -56,7 +56,7 @@ const News = async () => {
             ))}
           </div>
         ) : (
-          <div className="rounded-2xl border border-dashed border-gray-200 bg-gray-50 py-20 flex flex-col items-center gap-3">
+          <div className="rounded-2xl border border-dashed border-gray-200 bg-gray-50 py-20 px-6 flex flex-col items-center gap-3">
             <p className="text-lg font-bold text-gray-400">Coming soon...</p>
             <p className="text-sm text-gray-400">
               新着情報は現在準備中です。公開までお待ちください。
