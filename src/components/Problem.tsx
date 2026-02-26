@@ -31,7 +31,7 @@ const problemData = [
 
 const Problem = () => {
   return (
-    <section className="py-24 bg-gray-950 text-white">
+    <section className="py-24 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
         {/* ヘッダー */}
         <motion.div
@@ -42,23 +42,23 @@ const Problem = () => {
           className="mb-16"
         >
           <div className="flex items-center gap-2 mb-4">
-            <span className="w-8 h-px bg-cyan-500" />
-            <span className="text-xs font-semibold tracking-widest text-cyan-500 uppercase">
+            <span className="w-8 h-px bg-cyan-600" />
+            <span className="text-xs font-semibold tracking-widest text-cyan-600 uppercase">
               Problem
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-950 leading-tight">
             こんな悩み、
-            <span className="text-cyan-400">ありませんか？</span>
+            <span className="text-cyan-600">ありませんか？</span>
           </h2>
-          <p className="mt-4 text-gray-400 max-w-xl leading-relaxed">
+          <p className="mt-4 text-gray-500 max-w-xl leading-relaxed">
             離島でのIT活用には多くの課題があります。IKI Digital Lab.は、
             業務改善とAI活用を軸に、壱岐島にDXが根づく支援を行います。
           </p>
         </motion.div>
 
         {/* グリッド */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-gray-800">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {problemData.map((problem, index) => (
             <motion.div
               key={index}
@@ -66,25 +66,25 @@ const Problem = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="bg-gray-950 p-8 group hover:bg-gray-900 transition-colors duration-300"
+              className="bg-gray-50 p-8 rounded-2xl group hover:bg-gray-100 transition-colors duration-300"
             >
               <div className="flex flex-col gap-4">
                 {/* 番号 + アイコン */}
                 <div className="flex items-center justify-between">
-                  <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-cyan-950 border border-cyan-900/50 group-hover:border-cyan-700 transition-colors duration-300">
+                  <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-cyan-50 border border-cyan-100 group-hover:border-cyan-300 transition-colors duration-300">
                     {problem.icon}
                   </div>
-                  <span className="text-5xl font-black text-gray-800 leading-none select-none group-hover:text-gray-700 transition-colors">
+                  <span className="text-5xl font-black text-gray-200 leading-none select-none group-hover:text-gray-300 transition-colors">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
 
                 {/* テキスト */}
                 <div className="flex flex-col gap-2">
-                  <h3 className="text-base font-bold text-white">
+                  <h3 className="text-base font-bold text-gray-950">
                     {problem.title}
                   </h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">
+                  <p className="text-sm text-gray-500 leading-relaxed">
                     {problem.description}
                   </p>
                 </div>
