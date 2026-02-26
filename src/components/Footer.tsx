@@ -6,138 +6,103 @@ import { usePathname } from "next/navigation";
 import config from "@/config";
 import Image from "next/image";
 
+const navLinks = [
+  { label: "トップ", to: "hero", href: "/" },
+  { label: "サービス", to: "service", href: "/#service" },
+  { label: "学ぶ", to: null, href: "/coming-soon" },
+  { label: "お知らせ", to: "news", href: "/news" },
+  { label: "運営概要", to: "company-info", href: "/#company-info" },
+  { label: "お問い合わせ", to: "contact", href: "/#contact" },
+];
+
+const legalLinks = [
+  { label: "利用規約", href: "/tos" },
+  { label: "プライバシーポリシー", href: "/privacy-policy" },
+];
+
 const Footer = () => {
   const pathname = usePathname();
 
   return (
-    <footer className="border-t border-base-content/10 mt-8 lg:mt-16 footer-bg-color text-white">
-      <div className="py-12 md:py-24 p-8">
-        <div className="flex lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-          <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+    <footer className="bg-gray-950 text-white">
+      <div className="max-w-6xl mx-auto px-6 lg:px-12 py-16">
+        <div className="flex flex-col md:flex-row gap-12 md:gap-16">
+          {/* ブランド */}
+          <div className="flex flex-col gap-4 md:w-64 shrink-0">
             <Link
-              href="/#"
-              aria-current="page"
-              className="flex gap-2 justify-center md:justify-start items-center"
+              href="/"
+              className="flex items-center gap-2.5"
             >
               <Image
                 alt="Logo"
                 src="/logo-preview-white.png"
-                width={50}
-                height={50}
+                width={40}
+                height={40}
+                className="object-contain"
               />
-
-              <div className="flex flex-col">
-                <strong className="font-extrabold tracking-tight text-base md:text-lg leading-tight">
-                  IKI Digital Lab.
-                </strong>
-              </div>
+              <span className="font-extrabold text-base tracking-tight text-white">
+                IKI Digital Lab.
+              </span>
             </Link>
-
-            <p className="mt-3 text-sm text-base-content/80">
+            <p className="text-sm text-gray-400 leading-relaxed">
               {config.appDescription}
             </p>
           </div>
-          <div className="flex-grow flex flex-wrap justify-center -mb-10 md:mt-0 mt-10 text-center">
-            <div className="lg:w-1/3 md:w-1/2 w-full px-4">
-              <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-base">
-                {pathname == "/" ? (
-                  <Scroll
-                    to="hero"
-                    smooth={true}
-                    offset={-100}
-                    className="hover:cursor-pointer hover:underline"
-                  >
-                    トップ
-                  </Scroll>
-                ) : (
-                  <Link href="/" className="hover:underline">
-                    トップ
-                  </Link>
-                )}
-                {pathname == "/" ? (
-                  <Scroll
-                    to="service"
-                    smooth={true}
-                    offset={-100}
-                    className="hover:cursor-pointer hover:underline"
-                  >
-                    サービス
-                  </Scroll>
-                ) : (
-                  <Link href="/" className="hover:underline">
-                    サービス
-                  </Link>
-                )}
-                <Link
-                  href="/coming-soon"
-                  target="_brank"
-                  className="hover:underline"
-                >
-                  学ぶ
-                </Link>
-                {pathname == "/" ? (
-                  <Scroll
-                    to="news"
-                    smooth={true}
-                    offset={-100}
-                    className="hover:cursor-pointer hover:underline"
-                  >
-                    お知らせ
-                  </Scroll>
-                ) : (
-                  <Link href="/news" className="hover:underline">
-                    お知らせ
-                  </Link>
-                )}
-                {pathname == "/" ? (
-                  <Scroll
-                    to="company-info"
-                    smooth={true}
-                    offset={-100}
-                    className="hover:cursor-pointer hover:underline"
-                  >
-                    運営概要
-                  </Scroll>
-                ) : (
-                  <Link href="/#company-info" className="hover:underline">
-                    運営概要
-                  </Link>
-                )}
 
-                {pathname == "/" ? (
-                  <Scroll
-                    to="contact"
-                    smooth={true}
-                    offset={-100}
-                    className="hover:cursor-pointer hover:underline"
-                  >
-                    お問い合わせ
-                  </Scroll>
-                ) : (
-                  <Link href="/#contact" className="hover:underline">
-                    お問い合わせ
+          {/* ナビゲーション */}
+          <div className="flex-1 flex flex-col sm:flex-row gap-8 sm:gap-16">
+            <div className="flex flex-col gap-3">
+              <p className="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-1">
+                Menu
+              </p>
+              {navLinks.map(({ label, to, href }) => {
+                const linkClass =
+                  "text-sm text-gray-400 hover:text-white transition-colors duration-200";
+                if (to && pathname === "/") {
+                  return (
+                    <Scroll
+                      key={label}
+                      to={to}
+                      smooth={true}
+                      offset={-100}
+                      className={`${linkClass} cursor-pointer`}
+                    >
+                      {label}
+                    </Scroll>
+                  );
+                }
+                return (
+                  <Link key={label} href={href} className={linkClass}>
+                    {label}
                   </Link>
-                )}
-              </div>
+                );
+              })}
             </div>
 
-            <div className="lg:w-1/3 md:w-1/2 w-full px-4">
-              <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-4 text-base ">
-                <Link href="/tos" className="link link-hover">
-                  利用規約
+            <div className="flex flex-col gap-3">
+              <p className="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-1">
+                Legal
+              </p>
+              {legalLinks.map(({ label, href }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  className="text-sm text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  {label}
                 </Link>
-                <Link href="/privacy-policy" className="link link-hover">
-                  プライバシーポリシー
-                </Link>
-              </div>
+              ))}
             </div>
           </div>
         </div>
-      </div>
-      <div className="flex justify-center">
-        <p className="mt-3 mb-8 text-sm text-base-content/60">
-          Copyright © {new Date().getFullYear()} - All rights reserved
-        </p>
+
+        {/* ボトムバー */}
+        <div className="mt-12 pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="text-xs text-gray-600">
+            © {new Date().getFullYear()} IKI Digital Lab. All rights reserved.
+          </p>
+          <p className="text-xs text-gray-600">長崎県壱岐市</p>
+        </div>
       </div>
     </footer>
   );
