@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowRight, TrendingUp, Bot, GraduationCap } from "lucide-react";
+import { TrendingUp, Bot, GraduationCap } from "lucide-react";
 
 const benefitsData = [
   {
