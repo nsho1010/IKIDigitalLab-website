@@ -60,7 +60,7 @@ const ComingSoon = () => {
           <Link href="/">
             <Button
               size="lg"
-              className="bg-gray-950 text-white hover:bg-gray-800 transition-all duration-300 px-8 rounded-full font-semibold tracking-wide inline-flex items-center gap-2"
+              className="bg-gray-950 text-white hover:bg-gray-800 transition-all duration-300 px-8 rounded-xl font-semibold tracking-wide inline-flex items-center gap-2"
             >
               <ArrowLeft className="w-4 h-4" />
               トップページへ

@@ -170,7 +170,7 @@ export default function Component() {
                       id="name"
                       name="name"
                       placeholder="名前を入力"
-                      className="rounded-xl border-gray-200 focus:border-cyan-500 focus:ring-cyan-500 bg-gray-50 focus:bg-white transition-colors"
+                      className="rounded-md border-gray-200 focus:border-cyan-500 focus:ring-cyan-500 bg-gray-50 focus:bg-white transition-colors"
                     />
                     {validationErrors.name && (
                       <p className="text-destructive text-xs mt-0.5">
@@ -194,7 +194,7 @@ export default function Component() {
                       name="email"
                       placeholder="メールアドレスを入力"
                       type="email"
-                      className="rounded-xl border-gray-200 focus:border-cyan-500 focus:ring-cyan-500 bg-gray-50 focus:bg-white transition-colors"
+                      className="rounded-md border-gray-200 focus:border-cyan-500 focus:ring-cyan-500 bg-gray-50 focus:bg-white transition-colors"
                     />
                     {validationErrors.email && (
                       <p className="text-destructive text-xs mt-0.5">
@@ -215,7 +215,7 @@ export default function Component() {
                     メッセージ
                   </Label>
                   <Textarea
-                    className="min-h-[150px] rounded-xl border-gray-200 focus:border-cyan-500 focus:ring-cyan-500 bg-gray-50 focus:bg-white transition-colors resize-none"
+                    className="min-h-[150px] rounded-md border-gray-200 focus:border-cyan-500 focus:ring-cyan-500 bg-gray-50 focus:bg-white transition-colors resize-none"
                     id="message"
                     name="message"
                     placeholder="メッセージを入力"
@@ -231,7 +231,7 @@ export default function Component() {
 
                 <div className="flex justify-end pt-2">
                   <Button
-                    className="px-8 rounded-full font-semibold bg-gray-950 hover:bg-gray-800 text-white transition-all duration-300"
+                    className="px-8 rounded-xl font-semibold bg-gray-950 hover:bg-gray-800 text-white transition-all duration-300"
                     type="submit"
                   >
                     <Send className="w-4 h-4 mr-2" />
@@ -265,14 +265,14 @@ export default function Component() {
                 type="button"
                 variant="outline"
                 onClick={() => setShowModal(false)}
-                className="rounded-full px-6 border-gray-200"
+                className="rounded-xl px-6 border-gray-200"
               >
                 キャンセル
               </Button>
               <Button
                 type="button"
                 onClick={handleConfirmedSubmit}
-                className="rounded-full px-6 bg-gray-950 hover:bg-gray-800 text-white"
+                className="rounded-xl px-6 bg-gray-950 hover:bg-gray-800 text-white"
               >
                 送信する
               </Button>

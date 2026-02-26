@@ -33,7 +33,7 @@ const CtaBanner = () => {
           <Scroll to="contact" smooth={true} offset={-100} className="relative z-10">
             <Button
               size="lg"
-              className="bg-cyan-600 text-white hover:bg-cyan-500 font-semibold transition-all duration-300 px-10 rounded-full"
+              className="bg-cyan-600 text-white hover:bg-cyan-500 font-semibold transition-all duration-300 px-10 rounded-xl"
             >
               ご相談はこちら
             </Button>
