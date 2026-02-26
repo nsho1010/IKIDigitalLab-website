@@ -42,12 +42,12 @@ const Header = () => {
     await Promise.all([
       controls1.start({
         rotate: clicked ? 0 : 45,
-        y: clicked ? 0 : 7,
+        y: clicked ? 0 : 4,
         transition: { duration: 0.3 },
       }),
       controls2.start({
         rotate: clicked ? 0 : -45,
-        y: clicked ? 0 : -7,
+        y: clicked ? 0 : -4,
         transition: { duration: 0.3 },
       }),
     ]);
