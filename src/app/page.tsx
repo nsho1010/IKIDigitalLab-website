@@ -11,7 +11,7 @@ import { Suspense } from "react";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-6 lg:gap-14">
+    <main className="flex flex-col">
       <Hero />
       <Problem />
       <Benefits />

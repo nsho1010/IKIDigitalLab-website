@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { Code } from "lucide-react";
 
 const members = [
   {
     name: "ナガムラ ショウヘイ",
+    nameEn: "Shohei Nagamura",
     role: "代表 / Webエンジニア・DX推進",
     description: "ベンチャー・スタートアップ企業にてWebエンジニアとして従事。",
     image: "/myprofileimage.PNG",
@@ -13,60 +13,61 @@ const members = [
 
 const Member = () => {
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="max-w-5xl mx-auto px-8">
-        <div className="text-center mb-12">
-          <h2 className="relative inline-block text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
-            <span className="relative z-10">Member</span>
-            <span className="absolute bottom-0 left-0 right-0 h-3 bg-cyan-600/20 z-0" />
+    <section className="py-24 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-6 lg:px-12">
+        {/* ヘッダー */}
+        <div className="mb-16">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-8 h-px bg-cyan-600" />
+            <span className="text-xs font-semibold tracking-widest text-cyan-600 uppercase">
+              Member
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-950 leading-tight">
+            運営メンバー
           </h2>
-          <p className="mt-3 text-base md:text-lg lg:text-lg text-muted-foreground">
-            運営・開発メンバー
-          </p>
         </div>
 
-        <div className="w-full space-y-8">
+        <div className="space-y-8">
           {members.map((member) => (
             <div
               key={member.name}
-              className="flex flex-col md:flex-row items-center gap-8
-                         bg-gradient-to-br from-gray-50 to-white
-                         p-6 rounded-lg"
+              className="flex flex-col md:flex-row gap-8 md:gap-12 items-start bg-white rounded-2xl p-8 border border-gray-100"
             >
-              <div className="relative">
-                <div className="overflow-hidden rounded-lg">
+              {/* 画像 */}
+              <div className="shrink-0">
+                <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden bg-gray-100">
                   <Image
                     alt={member.name}
                     src={member.image}
-                    width={160}
-                    height={160}
-                    className="aspect-square object-cover"
+                    width={128}
+                    height={128}
+                    className="w-full h-full object-cover"
                   />
-                </div>
-                <div className="absolute -bottom-3 -right-3 bg-cyan-600 text-white rounded-full p-2">
-                  <Code className="w-5 h-5" />
                 </div>
               </div>
 
-              <div className="flex flex-col space-y-4 text-center md:text-left">
+              {/* テキスト */}
+              <div className="flex flex-col gap-4 flex-1">
                 <div>
-                  <p className="text-sm text-cyan-700 font-medium">
+                  <p className="text-xs font-semibold tracking-widest text-cyan-600 uppercase mb-1">
                     {member.role}
                   </p>
-                  <p className="text-lg font-bold text-gray-900">
+                  <p className="text-xl font-bold text-gray-950">
                     {member.name}
                   </p>
+                  <p className="text-sm text-gray-400">{member.nameEn}</p>
                 </div>
 
-                <p className="text-gray-600 text-sm md:text-base lg:text-base leading-relaxed">
+                <p className="text-sm text-gray-500 leading-relaxed max-w-prose">
                   {member.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                <div className="flex flex-wrap gap-2">
                   {member.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 text-sm bg-gray-100 text-gray-800 rounded-md"
+                      className="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-full"
                     >
                       {skill}
                     </span>
