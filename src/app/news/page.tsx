@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { getNewsList } from "@/lib/microcms";
 import Pagination from "@/components/ui/pagination";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { formatDate } from "@/lib/utils";
+import { ArrowUpRight } from "lucide-react";
 
 import {
   Breadcrumb,
@@ -30,53 +30,84 @@ const NewsListPage = async ({
   searchParams: { page: number; pageSize: number };
 }) => {
   const page = Number(searchParams.page) || 1;
-  const pageSize = Number(searchParams.pageSize) || 6;
+  const pageSize = Number(searchParams.pageSize) || 9;
   const offset = (page - 1) * pageSize;
   const data = await getNewsList({ offset, limit: pageSize });
   const totalPages = Math.ceil(data.totalCount / pageSize);
 
   return (
-    <main className="flex flex-col max-w-3xl mx-auto gap-4 lg:gap-8 py-24 lg:pt-32 px-8 min-h-screen">
-      <Breadcrumb>
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/">トップ</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbPage>お知らせ</BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
-      <h1 className="text-2xl md:text-2xl lg:text-3xl font-bold tracking-tight underline decoration-cyan-600 decoration-1 underline-offset-8 pt-10">
-        お知らせ
-      </h1>
-      <section className="w-full flex-grow">
-        {data.contents.length > 0 ? (
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {data.contents.map((news) => (
-              <Link key={news.id} href={`/news/${news.id}`}>
-                <Card key={news.id}>
-                  <CardHeader>
-                    <time
-                      className="text-sm text-muted-foreground"
-                      dateTime={news.publishedAt || news.createdAt}
-                    >
-                      {formatDate(news.publishedAt || news.createdAt)}
-                    </time>
-                  </CardHeader>
-                  <CardContent>
-                    <h3 className="mb-2 text-xl font-semibold leading-snug group-hover:underline">
-                      {news.title}
-                    </h3>
-                    <p className="text-muted-foreground">{news.description}</p>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
+    <main className="min-h-screen bg-white">
+      {/* ページヘッダー */}
+      <div className="relative overflow-hidden bg-white border-b border-gray-100">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gray-50/60" />
+          <div className="absolute top-1/4 right-1/4 w-80 h-80 rounded-full bg-cyan-50/80 blur-3xl" />
+        </div>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 pt-32 pb-16">
+          <Breadcrumb className="mb-8">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/" className="text-gray-400 hover:text-gray-700 transition-colors text-sm">
+                  トップ
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage className="text-sm text-gray-700">お知らせ</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-8 h-px bg-cyan-600" />
+            <span className="text-xs font-semibold tracking-widest text-cyan-600 uppercase">
+              News
+            </span>
           </div>
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-950 leading-tight">
+            お知らせ
+          </h1>
+        </div>
+      </div>
+
+      {/* コンテンツ */}
+      <div className="max-w-6xl mx-auto px-6 lg:px-12 py-16">
+        {data.contents.length > 0 ? (
+          <>
+            <div className="flex flex-col divide-y divide-gray-100">
+              {data.contents.map((news) => (
+                <Link
+                  key={news.id}
+                  href={`/news/${news.id}`}
+                  className="group flex flex-col sm:flex-row sm:items-center gap-4 py-7 hover:bg-gray-50/80 -mx-4 px-4 rounded-xl transition-colors duration-200"
+                >
+                  <time
+                    className="shrink-0 text-sm font-medium text-gray-400 w-28"
+                    dateTime={news.publishedAt || news.createdAt}
+                  >
+                    {formatDate(news.publishedAt ?? news.createdAt)}
+                  </time>
+                  <h3 className="flex-1 text-base font-semibold text-gray-800 group-hover:text-cyan-600 transition-colors line-clamp-2 leading-snug">
+                    {news.title}
+                  </h3>
+                  {news.description && (
+                    <p className="hidden md:block flex-1 text-sm text-gray-400 line-clamp-1 max-w-xs">
+                      {news.description}
+                    </p>
+                  )}
+                  <ArrowUpRight className="shrink-0 w-4 h-4 text-gray-300 group-hover:text-cyan-600 transition-colors hidden sm:block" />
+                </Link>
+              ))}
+            </div>
+
+            {totalPages > 1 && (
+              <div className="flex justify-center mt-16">
+                <Pagination totalPages={totalPages} />
+              </div>
+            )}
+          </>
         ) : (
-          <div className="flex flex-col items-center justify-center gap-6 py-24 text-center">
+          <div className="rounded-2xl border border-dashed border-gray-200 bg-gray-50 py-24 px-6 flex flex-col items-center gap-4 text-center">
             <div className="flex items-center gap-2">
               <span className="w-8 h-px bg-cyan-600" />
               <span className="text-xs font-semibold tracking-widest text-cyan-600 uppercase">
@@ -94,12 +125,7 @@ const NewsListPage = async ({
             </p>
           </div>
         )}
-      </section>
-      {totalPages > 1 && (
-        <div className="flex justify-center mb-8">
-          <Pagination totalPages={totalPages} />
-        </div>
-      )}
+      </div>
     </main>
   );
 };
