@@ -77,9 +77,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-base md:text-lg text-gray-500 leading-relaxed max-w-lg"
             >
-              業務改善・AI活用・内製化から、必要に応じたWeb受託開発まで、
-              <br className="hidden md:block" />
-              壱岐の事業者に寄り添って伴走します。
+              業務改善・AI活用・内製化から、必要に応じたWeb受託開発まで、壱岐の事業者に寄り添って伴走します。
             </motion.p>
 
             {/* CTA */}
