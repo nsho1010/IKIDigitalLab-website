@@ -136,8 +136,6 @@ const Hero = () => {
             className="flex-1 relative w-full max-w-xl lg:max-w-none"
           >
             <div className="relative">
-              {/* 装飾フレーム */}
-              <div className="absolute -top-4 -right-4 w-full h-full rounded-3xl border border-gray-200 z-0" />
               <div className="relative z-10 rounded-3xl overflow-hidden bg-gray-50">
                 <Image
                   src="/hero.png"
