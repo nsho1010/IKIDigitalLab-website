@@ -3,6 +3,7 @@ import News from "@/components/News";
 import Problem from "@/components/Problem";
 import Benefits from "@/components/Benefits";
 import Service from "@/components/Service";
+import CtaBanner from "@/components/CtaBanner";
 import Member from "@/components/Member";
 import CompanyInfo from "@/components/CompanyInfo";
 import Contact from "@/components/Contact";
@@ -15,6 +16,7 @@ export default function Home() {
       <Problem />
       <Benefits />
       <Service />
+      <CtaBanner />
       <Suspense fallback={<div>Loading...</div>}>
         <News />
         <Member />
