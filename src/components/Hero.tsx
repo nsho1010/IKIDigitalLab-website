@@ -92,7 +92,7 @@ const Hero = () => {
               <Scroll to="contact" smooth={true} offset={-100}>
                 <Button
                   size="lg"
-                  className="bg-gray-950 text-white hover:bg-gray-800 transition-all duration-300 px-8 rounded-full font-semibold tracking-wide"
+                  className="bg-gray-950 text-white hover:bg-gray-800 transition-all duration-300 px-8 rounded-xl font-semibold tracking-wide"
                 >
                   お問い合わせ
                 </Button>
@@ -101,7 +101,7 @@ const Hero = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-gray-300 text-gray-700 hover:border-gray-950 hover:text-gray-950 transition-all duration-300 px-8 rounded-full"
+                  className="border-gray-300 text-gray-700 hover:border-gray-950 hover:text-gray-950 transition-all duration-300 px-8 rounded-xl"
                 >
                   サービスを見る
                 </Button>
