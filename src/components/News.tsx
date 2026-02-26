@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { getNewsList } from "@/lib/microcms";
 import { formatDate } from "@/lib/utils";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { ChevronRight, Calendar, ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 const News = async () => {
   const data = await getNewsList({
@@ -10,74 +9,60 @@ const News = async () => {
   });
 
   return (
-    <section id="news" className="py-12 bg-white">
-      <div className="flex flex-col items-center justify-center gap-6 lg:gap-10 p-8 w-full max-w-7xl mx-auto">
-        <div className="w-full flex flex-col items-center">
+    <section id="news" className="py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-6 lg:px-12">
+        {/* ヘッダー */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <span className="w-8 h-px bg-cyan-600" />
+              <span className="text-xs font-semibold tracking-widest text-cyan-600 uppercase">
+                News
+              </span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-950 leading-tight">
+              お知らせ
+            </h2>
+          </div>
           <Link
             href="/news"
-            className="group flex items-center gap-2 hover:text-cyan-600 transition-colors"
+            className="group inline-flex items-center gap-1.5 text-sm font-semibold text-gray-500 hover:text-cyan-600 transition-colors"
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight relative inline-block">
-              <span className="relative z-10">News</span>
-              <span className="absolute bottom-0 left-0 right-0 h-3 bg-cyan-600/20 z-0"></span>
-            </h2>
-            <ChevronRight className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" />
+            すべて見る
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
-          <p className="mt-2 md:text-lg/relaxed lg:text-lg/relaxed text-muted-foreground">
-            お知らせ
-          </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 w-full">
-          {data.contents.length > 0 ? (
-            data.contents.map((news, id) => (
-              <Card
+        {/* コンテンツ */}
+        {data.contents.length > 0 ? (
+          <div className="flex flex-col divide-y divide-gray-100">
+            {data.contents.map((news, id) => (
+              <Link
                 key={id}
-                className="overflow-hidden rounded-xl shadow-md border-0 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group"
+                href={`/news/${news.id}`}
+                className="group flex flex-col sm:flex-row sm:items-center gap-4 py-6 hover:bg-gray-50/80 -mx-4 px-4 rounded-xl transition-colors duration-200"
               >
-                <Link href={`/news/${news.id}`} className="block h-full">
-                  <CardHeader className="p-6 pb-0">
-                    <div className="flex items-center mb-2">
-                      <Calendar className="w-4 h-4 text-cyan-600 mr-2" />
-                      <time
-                        className="text-sm font-medium text-cyan-600"
-                        dateTime={news.publishedAt || news.createdAt}
-                      >
-                        {formatDate(news.publishedAt ?? news.createdAt)}
-                      </time>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="p-6">
-                    <h3 className="mb-3 text-xl font-semibold leading-snug text-gray-900 group-hover:text-cyan-600 transition-colors line-clamp-2">
-                      {news.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm line-clamp-3 mb-4">
-                      {news.description}
-                    </p>
-
-                    <div className="flex items-center justify-end text-sm font-medium text-cyan-600 pt-3 border-t border-gray-100">
-                      詳細を見る
-                      <ArrowRight className="ml-1 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </div>
-                  </CardContent>
-                </Link>
-              </Card>
-            ))
-          ) : (
-            <div className="sm:col-span-2 lg:col-span-3 flex justify-center items-center w-full">
-              <div className="overflow-hidden rounded-xl shadow-lg bg-gradient-to-r from-cyan-600 to-cyan-600 h-48 md:h-64 flex justify-center items-center w-full">
-                <div className="text-center px-8 py-12">
-                  <p className="text-2xl md:text-2xl lg:text-3xl font-bold text-white mb-4">
-                    Coming soon...
-                  </p>
-                  <p className="text-white/80 text-sm md:text-base lg:text-base">
-                    新着情報は現在準備中です。公開までお待ちください。
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
+                <time
+                  className="shrink-0 text-sm font-medium text-gray-400 w-28"
+                  dateTime={news.publishedAt || news.createdAt}
+                >
+                  {formatDate(news.publishedAt ?? news.createdAt)}
+                </time>
+                <h3 className="flex-1 text-base font-semibold text-gray-800 group-hover:text-cyan-600 transition-colors line-clamp-2 leading-snug">
+                  {news.title}
+                </h3>
+                <ArrowUpRight className="shrink-0 w-4 h-4 text-gray-300 group-hover:text-cyan-600 transition-colors hidden sm:block" />
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <div className="rounded-2xl border border-dashed border-gray-200 bg-gray-50 py-20 px-6 flex flex-col items-center gap-3">
+            <p className="text-lg font-bold text-gray-400">Coming soon...</p>
+            <p className="text-sm text-gray-400">
+              新着情報は現在準備中です。公開までお待ちください。
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );

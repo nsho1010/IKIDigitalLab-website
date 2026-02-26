@@ -35,7 +35,13 @@ const TermsOfServicePage = () => {
       </Breadcrumb>
       <article className="prose prose-slate mx-auto dark:prose-invert">
         <div className="space-y-6">
-          <h1 className="text-3xl font-bold mb-4">利用規約</h1>
+          <div className="flex items-center gap-2 mb-2">
+            <span className="w-8 h-px bg-cyan-600" />
+            <span className="text-xs font-semibold tracking-widest text-cyan-600 uppercase">
+              Terms of Service
+            </span>
+          </div>
+          <h1 className="text-3xl font-extrabold tracking-tight text-gray-950 mb-4">利用規約</h1>
 
           <p>
             本利用規約（以下「本規約」といいます。）は、{config.appName}

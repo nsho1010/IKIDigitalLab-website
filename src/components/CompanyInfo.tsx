@@ -1,4 +1,4 @@
-import { MapPin, User, Briefcase } from "lucide-react";
+import { MapPin, User, Briefcase, Calendar } from "lucide-react";
 
 const companyInfoData = {
   name: "IKI Digital Lab.",
@@ -9,20 +9,50 @@ const companyInfoData = {
     "DX・AI活用の伴走支援／Web制作・受託開発／IT研修・プログラミング教育",
 };
 
+const infoItems = [
+  {
+    icon: <MapPin className="w-4 h-4" />,
+    label: "所在地",
+    value: companyInfoData.location,
+  },
+  {
+    icon: <User className="w-4 h-4" />,
+    label: "代表者",
+    value: companyInfoData.president,
+  },
+  {
+    icon: <Calendar className="w-4 h-4" />,
+    label: "設立",
+    value: companyInfoData.established,
+  },
+  {
+    icon: <Briefcase className="w-4 h-4" />,
+    label: "提供内容",
+    value: companyInfoData.business,
+  },
+];
+
 const CompanyInfo = () => {
   return (
-    <section id="company-info" className="py-16">
-      <div className="max-w-6xl mx-auto px-8">
-        <div className="flex flex-col items-center justify-center space-y-8 mb-10">
-          <h2 className="relative inline-block text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
-            <span className="relative z-10">運営概要</span>
-            <span className="absolute bottom-0 left-0 right-0 h-3 bg-cyan-600/20 z-0"></span>
+    <section id="company-info" className="py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-6 lg:px-12">
+        {/* ヘッダー */}
+        <div className="mb-16">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-8 h-px bg-cyan-600" />
+            <span className="text-xs font-semibold tracking-widest text-cyan-600 uppercase">
+              About
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-950 leading-tight">
+            運営概要
           </h2>
         </div>
 
-        <div className="flex flex-col-reverse lg:flex-row gap-12">
-          <div className="w-full lg:w-1/2">
-            <div className="rounded-lg overflow-hidden shadow-sm">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
+          {/* マップ */}
+          <div className="w-full lg:w-1/2 shrink-0">
+            <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6635.037567898468!2d129.67908911499234!3d33.74725761365943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356a152dd77d1c2b%3A0xf76c730b62764b90!2z44CSODExLTUxMzUg6ZW35bSO55yM5aOx5bKQ5biC6YO344OO5rWm55S66YO344OO5rWm!5e0!3m2!1sja!2sjp!4v1723188274913!5m2!1sja!2sjp"
                 width="100%"
@@ -34,33 +64,24 @@ const CompanyInfo = () => {
             </div>
           </div>
 
-          <div className="w-full lg:w-1/2">
-            <h3 className="text-xl font-bold mb-6">{companyInfoData.name}</h3>
+          {/* 情報 */}
+          <div className="flex flex-col gap-6 justify-center">
+            <h3 className="text-2xl font-bold text-gray-950">
+              {companyInfoData.name}
+            </h3>
 
-            <dl className="space-y-6">
-              <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-cyan-600" />
-                <div>
-                  <dt className="font-medium">所在地</dt>
-                  <dd className="text-gray-600">{companyInfoData.location}</dd>
+            <dl className="flex flex-col divide-y divide-gray-100">
+              {infoItems.map((item) => (
+                <div key={item.label} className="flex gap-4 py-4">
+                  <dt className="shrink-0 flex items-center gap-2 w-28 text-sm font-medium text-gray-500">
+                    <span className="text-cyan-600">{item.icon}</span>
+                    {item.label}
+                  </dt>
+                  <dd className="text-sm text-gray-700 leading-relaxed">
+                    {item.value}
+                  </dd>
                 </div>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <User className="w-5 h-5 text-cyan-600" />
-                <div>
-                  <dt className="font-medium">代表者</dt>
-                  <dd className="text-gray-600">{companyInfoData.president}</dd>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Briefcase className="w-5 h-5 text-cyan-600" />
-                <div>
-                  <dt className="font-medium">提供内容</dt>
-                  <dd className="text-gray-600">{companyInfoData.business}</dd>
-                </div>
-              </div>
+              ))}
             </dl>
           </div>
         </div>

@@ -35,7 +35,13 @@ const PrivacyPolicyPage = () => {
       </Breadcrumb>
       <article className="prose prose-slate mx-auto dark:prose-invert">
         <div className="space-y-6">
-          <h1 className="text-3xl font-bold mb-4">プライバシーポリシー</h1>
+          <div className="flex items-center gap-2 mb-2">
+            <span className="w-8 h-px bg-cyan-600" />
+            <span className="text-xs font-semibold tracking-widest text-cyan-600 uppercase">
+              Privacy Policy
+            </span>
+          </div>
+          <h1 className="text-3xl font-extrabold tracking-tight text-gray-950 mb-4">プライバシーポリシー</h1>
 
           <p>
             {config.appName}

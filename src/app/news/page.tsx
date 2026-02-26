@@ -76,11 +76,21 @@ const NewsListPage = async ({
             ))}
           </div>
         ) : (
-          <div className="flex flex-col items-center justify-center flex-grow py-20 text-gray-900">
-            <p className="lg:text-lg md:text-base font-medium text-center">
-              現在、お知らせはありません。
+          <div className="flex flex-col items-center justify-center gap-6 py-24 text-center">
+            <div className="flex items-center gap-2">
+              <span className="w-8 h-px bg-cyan-600" />
+              <span className="text-xs font-semibold tracking-widest text-cyan-600 uppercase">
+                Coming Soon
+              </span>
+              <span className="w-8 h-px bg-cyan-600" />
+            </div>
+            <h2 className="font-extrabold text-3xl md:text-4xl tracking-tight text-gray-950">
+              準備中です
+            </h2>
+            <p className="text-base md:text-lg text-gray-500 leading-relaxed max-w-md">
+              現在、お知らせを準備中です。
               <br />
-              公開までお待ちください。
+              公開までしばらくお待ちください。
             </p>
           </div>
         )}

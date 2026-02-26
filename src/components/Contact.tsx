@@ -43,7 +43,6 @@ export default function Component() {
     }
   }, [formState, toast]);
 
-  // エラー表示用の関数
   const renderError = (error: string[] | undefined) => {
     if (error && error.length > 0) {
       return (
@@ -55,11 +54,9 @@ export default function Component() {
     return null;
   };
 
-  // フォーム送信前の確認
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // バリデーション
     const formData = new FormData(e.currentTarget);
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
@@ -83,13 +80,11 @@ export default function Component() {
 
     setValidationErrors(errors);
 
-    // エラーがなければモーダルを表示
     if (Object.keys(errors).length === 0) {
       setShowModal(true);
     }
   };
 
-  // 確認後の送信
   const handleConfirmedSubmit = () => {
     setShowModal(false);
     if (formRef.current) {
@@ -99,151 +94,192 @@ export default function Component() {
   };
 
   return (
-    <section
-      id="contact"
-      className="py-16 bg-gradient-to-b from-white to-gray-50"
-    >
-      <div className="max-w-4xl mx-auto px-8">
-        <div className="text-center mb-10">
-          <h2 className="relative inline-block text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
-            <span className="relative z-10">Contact</span>
-            <span className="absolute bottom-0 left-0 right-0 h-3 bg-cyan-600/20 z-0"></span>
-          </h2>
-          <p className="mt-2 text-base md:text-lg lg:text-lg text-muted-foreground">
+    <section id="contact" className="py-24 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-6 lg:px-12">
+        {/* ヘッダー */}
+        <div className="mb-16">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-8 h-px bg-cyan-600" />
+            <span className="text-xs font-semibold tracking-widest text-cyan-600 uppercase">
+              Contact
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-950 leading-tight">
             お問い合わせ
-          </p>
-          <p className="mt-4 text-muted-foreground">
+          </h2>
+          <p className="mt-4 text-sm text-gray-500 max-w-md leading-relaxed">
             ご質問や相談事があれば、気軽にお問い合わせください。
           </p>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm p-8">
-          <form
-            ref={formRef}
-            className="space-y-6"
-            onSubmit={handleSubmit}
-            noValidate
-          >
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              <div className="space-y-2">
-                <Label
-                  htmlFor="name"
-                  className="flex items-center gap-2 font-medium"
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
+          {/* 左側：案内テキスト */}
+          <div className="lg:w-72 shrink-0 flex flex-col gap-6">
+            <div className="flex flex-col gap-4">
+              {[
+                {
+                  icon: <Mail className="w-4 h-4 text-cyan-600" />,
+                  title: "メールで相談",
+                  desc: "フォームからお気軽にどうぞ。3営業日以内に返答します。",
+                },
+                {
+                  icon: <MessageSquare className="w-4 h-4 text-cyan-600" />,
+                  title: "まず話を聞いてほしい",
+                  desc: "「何から始めれば？」という段階でも大歓迎です。",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="flex gap-3 p-4 rounded-xl bg-white border border-gray-100"
                 >
-                  <User className="w-4 h-4 text-cyan-600" />
-                  お名前
-                </Label>
-                <Input
-                  id="name"
-                  name="name"
-                  placeholder="名前を入力"
-                  className="border-gray-200 focus:border-cyan-500 focus:ring-cyan-500"
-                />
-                {validationErrors.name && (
-                  <div className="text-destructive text-sm mt-1">
-                    {validationErrors.name}
+                  <div className="shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-cyan-50">
+                    {item.icon}
                   </div>
-                )}
-                {formState.status === "error" &&
-                  renderError(formState.fieldErrors?.name)}
-              </div>
-              <div className="space-y-2">
-                <Label
-                  htmlFor="email"
-                  className="flex items-center gap-2 font-medium"
-                >
-                  <Mail className="w-4 h-4 text-cyan-600" />
-                  メールアドレス
-                </Label>
-                <Input
-                  id="email"
-                  name="email"
-                  placeholder="メールアドレスを入力"
-                  type="email"
-                  className="border-gray-200 focus:border-cyan-500 focus:ring-cyan-500"
-                />
-                {validationErrors.email && (
-                  <div className="text-destructive text-sm mt-1">
-                    {validationErrors.email}
+                  <div className="flex flex-col gap-0.5">
+                    <p className="text-sm font-semibold text-gray-800">
+                      {item.title}
+                    </p>
+                    <p className="text-xs text-gray-500 leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
-                )}
-                {formState.status === "error" &&
-                  renderError(formState.fieldErrors?.email)}
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <Label
-                htmlFor="message"
-                className="flex items-center gap-2 font-medium"
-              >
-                <MessageSquare className="w-4 h-4 text-cyan-600" />
-                メッセージ
-              </Label>
-              <Textarea
-                className="min-h-[150px] border-gray-200 focus:border-cyan-500 focus:ring-cyan-500"
-                id="message"
-                name="message"
-                placeholder="メッセージを入力"
-              />
-              {validationErrors.message && (
-                <div className="text-destructive text-sm mt-1">
-                  {validationErrors.message}
                 </div>
-              )}
-              {formState.status === "error" &&
-                renderError(formState.fieldErrors?.message)}
+              ))}
             </div>
+          </div>
 
-            <div className="flex justify-center pt-4">
-              <Button
-                className="px-8 py-3 font-medium bg-cyan-600 hover:bg-cyan-700 text-white shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md"
-                type="submit"
+          {/* 右側：フォーム */}
+          <div className="flex-1">
+            <div className="bg-white rounded-2xl border border-gray-100 p-8">
+              <form
+                ref={formRef}
+                className="flex flex-col gap-6"
+                onSubmit={handleSubmit}
+                noValidate
               >
-                <Send className="w-4 h-4 mr-2" />
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  <div className="flex flex-col gap-1.5">
+                    <Label
+                      htmlFor="name"
+                      className="flex items-center gap-1.5 text-sm font-medium text-gray-700"
+                    >
+                      <User className="w-3.5 h-3.5 text-cyan-600" />
+                      お名前
+                    </Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      placeholder="名前を入力"
+                      className="rounded-xl border-gray-200 focus:border-cyan-500 focus:ring-cyan-500 bg-gray-50 focus:bg-white transition-colors"
+                    />
+                    {validationErrors.name && (
+                      <p className="text-destructive text-xs mt-0.5">
+                        {validationErrors.name}
+                      </p>
+                    )}
+                    {formState.status === "error" &&
+                      renderError(formState.fieldErrors?.name)}
+                  </div>
+
+                  <div className="flex flex-col gap-1.5">
+                    <Label
+                      htmlFor="email"
+                      className="flex items-center gap-1.5 text-sm font-medium text-gray-700"
+                    >
+                      <Mail className="w-3.5 h-3.5 text-cyan-600" />
+                      メールアドレス
+                    </Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      placeholder="メールアドレスを入力"
+                      type="email"
+                      className="rounded-xl border-gray-200 focus:border-cyan-500 focus:ring-cyan-500 bg-gray-50 focus:bg-white transition-colors"
+                    />
+                    {validationErrors.email && (
+                      <p className="text-destructive text-xs mt-0.5">
+                        {validationErrors.email}
+                      </p>
+                    )}
+                    {formState.status === "error" &&
+                      renderError(formState.fieldErrors?.email)}
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-1.5">
+                  <Label
+                    htmlFor="message"
+                    className="flex items-center gap-1.5 text-sm font-medium text-gray-700"
+                  >
+                    <MessageSquare className="w-3.5 h-3.5 text-cyan-600" />
+                    メッセージ
+                  </Label>
+                  <Textarea
+                    className="min-h-[150px] rounded-xl border-gray-200 focus:border-cyan-500 focus:ring-cyan-500 bg-gray-50 focus:bg-white transition-colors resize-none"
+                    id="message"
+                    name="message"
+                    placeholder="メッセージを入力"
+                  />
+                  {validationErrors.message && (
+                    <p className="text-destructive text-xs mt-0.5">
+                      {validationErrors.message}
+                    </p>
+                  )}
+                  {formState.status === "error" &&
+                    renderError(formState.fieldErrors?.message)}
+                </div>
+
+                <div className="flex justify-end pt-2">
+                  <Button
+                    className="px-8 rounded-full font-semibold bg-gray-950 hover:bg-gray-800 text-white transition-all duration-300"
+                    type="submit"
+                  >
+                    <Send className="w-4 h-4 mr-2" />
+                    送信する
+                  </Button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 確認モーダル */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full mx-4">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-bold text-gray-950">送信確認</h3>
+              <button
+                onClick={() => setShowModal(false)}
+                className="text-gray-400 hover:text-gray-600 transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <p className="text-sm text-gray-500 mb-6 leading-relaxed">
+              入力内容を送信してもよろしいですか？
+            </p>
+            <div className="flex gap-3 justify-end">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => setShowModal(false)}
+                className="rounded-full px-6 border-gray-200"
+              >
+                キャンセル
+              </Button>
+              <Button
+                type="button"
+                onClick={handleConfirmedSubmit}
+                className="rounded-full px-6 bg-gray-950 hover:bg-gray-800 text-white"
+              >
                 送信する
               </Button>
             </div>
-          </form>
-        </div>
-
-        {/* お問い合わせ送信確認モーダル */}
-        {showModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-            <div className="bg-white rounded-xl shadow-xl p-8 max-w-md w-full mx-4">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-bold text-gray-900">送信確認</h3>
-                <button
-                  onClick={() => setShowModal(false)}
-                  className="text-gray-400 hover:text-gray-600"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-              <p className="text-gray-600 mb-6">
-                入力内容を送信してもよろしいですか？
-              </p>
-              <div className="flex gap-3 justify-end">
-                <Button
-                  type="button"
-                  variant="outline"
-                  onClick={() => setShowModal(false)}
-                  className="px-6"
-                >
-                  キャンセル
-                </Button>
-                <Button
-                  type="button"
-                  onClick={handleConfirmedSubmit}
-                  className="px-6 bg-cyan-600 hover:bg-cyan-700 text-white"
-                >
-                  送信する
-                </Button>
-              </div>
-            </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </section>
   );
 }
