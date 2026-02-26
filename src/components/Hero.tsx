@@ -32,7 +32,7 @@ const Hero = () => {
         <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-cyan-50/80 blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full pt-24 lg:pt-0">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full pt-24 lg:pt-28">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* テキスト側 */}
           <div className="flex-1 flex flex-col gap-8 items-start">
