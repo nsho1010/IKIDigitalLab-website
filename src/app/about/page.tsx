@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MapPin, User, Briefcase, Calendar } from "lucide-react";
+import { MapPin, User, Briefcase } from "lucide-react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -26,7 +26,7 @@ const members = [
     nameEn: "Shohei Nagamura",
     role: "代表 / Webエンジニア・DX推進",
     description: "ベンチャー・スタートアップ企業にてWebエンジニアとして従事。",
-    image: "/myprofileimage.PNG",
+    image: "/profile01.jpeg",
     skills: ["Web開発", "DX推進", "学ぶ", "業務改善"],
   },
 ];
@@ -51,11 +51,11 @@ const infoItems = [
     label: "代表者",
     value: companyInfoData.president,
   },
-  {
-    icon: <Calendar className="w-4 h-4" />,
-    label: "設立",
-    value: companyInfoData.established,
-  },
+  // {
+  //   icon: <Calendar className="w-4 h-4" />,
+  //   label: "設立",
+  //   value: companyInfoData.established,
+  // },
   {
     icon: <Briefcase className="w-4 h-4" />,
     label: "提供内容",

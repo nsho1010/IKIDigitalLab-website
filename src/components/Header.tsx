@@ -133,7 +133,6 @@ const Header = () => {
               </Link>
             )}
           </div>
-
         </nav>
       </header>
 
@@ -227,7 +226,12 @@ const Header = () => {
                 className="pt-6"
               >
                 {pathname === "/" ? (
-                  <Scroll to="contact" smooth={true} offset={-40} onClick={closeMenu}>
+                  <Scroll
+                    to="contact"
+                    smooth={true}
+                    offset={-40}
+                    onClick={closeMenu}
+                  >
                     <Button className="w-full rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-semibold transition-all duration-300">
                       お問い合わせ
                     </Button>
