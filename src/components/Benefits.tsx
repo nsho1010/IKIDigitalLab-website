@@ -96,10 +96,10 @@ const Benefits = () => {
               </div>
 
               {/* フッター */}
-              <div className="mt-auto pt-4 border-t border-gray-100 flex items-center text-xs font-medium text-gray-400 group-hover:text-cyan-600 transition-colors duration-300">
+              {/* <div className="mt-auto pt-4 border-t border-gray-100 flex items-center text-xs font-medium text-gray-400 group-hover:text-cyan-600 transition-colors duration-300">
                 <span>詳しく見る</span>
                 <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
-              </div>
+              </div> */}
             </motion.div>
           ))}
         </div>
