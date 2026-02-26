@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { AlertTriangle, Users, DollarSign, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -41,8 +40,8 @@ const Problem = () => {
       <div className="max-w-6xl mx-auto px-8">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-2xl lg:text-3xl font-bold mb-4">
-            <span className="text-cyan-600">IT導入・業務改善・AI活用支援</span>
-            をサポートします
+            こんな悩み、
+            <span className="text-cyan-600">ありませんか？</span>
           </h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground">
             離島でのIT活用には多くの課題があります。
@@ -52,30 +51,37 @@ const Problem = () => {
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
-          <div className="rounded-lg overflow-hidden">
-            <Image
-              src="/problem.jpg"
-              width={600}
-              height={400}
-              alt="ICT and DX"
-              className="w-full aspect-video object-cover"
-            />
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {problemData.map((problem, index) => (
+            <motion.div
+              key={index}
+              className="relative overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-sm p-6 flex flex-col gap-4 group hover:shadow-md transition-shadow duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
+            >
+              {/* 背景の大きな番号 */}
+              <span className="absolute -top-3 -right-1 text-[6rem] font-black text-gray-100 leading-none select-none">
+                {String(index + 1).padStart(2, "0")}
+              </span>
 
-          <div className="space-y-6">
-            {problemData.map((problem, index) => (
-              <div key={index} className="flex gap-4">
-                <div className="pt-1">{problem.icon}</div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-1">
-                    {problem.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm">{problem.description}</p>
-                </div>
+              {/* アイコン */}
+              <div className="relative z-10 w-10 h-10 flex items-center justify-center rounded-xl bg-cyan-50 border border-cyan-100">
+                {problem.icon}
               </div>
-            ))}
-          </div>
+
+              {/* テキスト */}
+              <div className="relative z-10 flex flex-col gap-1.5">
+                <h3 className="text-base font-bold text-gray-900">
+                  {problem.title}
+                </h3>
+                <p className="text-sm text-gray-500 leading-relaxed">
+                  {problem.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </motion.section>

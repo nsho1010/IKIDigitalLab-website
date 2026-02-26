@@ -44,14 +44,25 @@ const Hero = () => {
         <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed">
           業務改善・AI活用・内製化から、必要に応じたWeb受託開発まで、壱岐の事業者に寄り添って伴走します。
         </p>
-        <Scroll to="contact" smooth={true} offset={-100}>
-          <Button
-            size="lg"
-            className="bg-cyan-600 text-white hover:bg-cyan-700 transition-all duration-300 mt-2"
-          >
-            お問い合わせ
-          </Button>
-        </Scroll>
+        <div className="flex flex-col sm:flex-row gap-3 mt-2">
+          <Scroll to="contact" smooth={true} offset={-100}>
+            <Button
+              size="lg"
+              className="bg-cyan-600 text-white hover:bg-cyan-700 transition-all duration-300"
+            >
+              お問い合わせ
+            </Button>
+          </Scroll>
+          <Scroll to="service" smooth={true} offset={-80}>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-cyan-600 text-cyan-600 hover:bg-cyan-50 transition-all duration-300"
+            >
+              サービスを見る
+            </Button>
+          </Scroll>
+        </div>
       </div>
       <motion.div
         initial={{ opacity: 0 }}
