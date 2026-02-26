@@ -14,7 +14,7 @@ const navLinks = [
   { label: "サービス", to: "service", href: "/#service" },
   { label: "学ぶ", to: null, href: "/coming-soon" },
   { label: "お知らせ", to: "news", href: "/news" },
-  { label: "運営概要", to: "company-info", href: "/#company-info" },
+  { label: "運営概要", to: null, href: "/about" },
 ];
 
 const Header = () => {
