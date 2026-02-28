@@ -59,7 +59,9 @@ const Hero = () => {
               離島の未来を
               <br />
               <span className="relative inline-block mt-2">
-                <span className="relative z-10 text-cyan-600">{textanimate}</span>
+                <span className="relative z-10 text-cyan-600">
+                  {textanimate}
+                </span>
                 <motion.span
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
@@ -77,7 +79,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-base md:text-lg text-gray-500 leading-relaxed max-w-lg"
             >
-              業務改善・AI活用・内製化から、必要に応じたWeb受託開発まで、壱岐の事業者に寄り添って伴走します。
+              業務改善・AI活用・内製化から、必要に応じたWeb受託開発まで、事業者に寄り添って伴走します。
             </motion.p>
 
             {/* CTA */}
@@ -119,8 +121,12 @@ const Hero = () => {
                 { value: "伴走", label: "型サポート" },
               ].map((stat, i) => (
                 <div key={i} className="flex flex-col">
-                  <span className="text-xl font-extrabold text-gray-950">{stat.value}</span>
-                  <span className="text-xs text-gray-400 mt-0.5">{stat.label}</span>
+                  <span className="text-xl font-extrabold text-gray-950">
+                    {stat.value}
+                  </span>
+                  <span className="text-xs text-gray-400 mt-0.5">
+                    {stat.label}
+                  </span>
                 </div>
               ))}
             </motion.div>
