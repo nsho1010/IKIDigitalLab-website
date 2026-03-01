@@ -53,7 +53,7 @@ const Problem = () => {
           </h2>
           <p className="mt-4 text-gray-500 max-w-xl leading-relaxed">
             離島でのIT活用には多くの課題があります。IKI Digital Lab.は、
-            業務改善とAI活用を軸に、壱岐島にDXが根づく支援を行います。
+            業務改善とAI活用を軸に、DXが根づく支援を行います。
           </p>
         </motion.div>
 
