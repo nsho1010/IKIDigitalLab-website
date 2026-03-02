@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import { MapPin, User, Briefcase } from "lucide-react";
 import {
   Breadcrumb,
