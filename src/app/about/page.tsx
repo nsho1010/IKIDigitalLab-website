@@ -133,7 +133,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* 運営メンバー */}
+      {/* 運営 */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6 lg:px-12">
           <div className="mb-16">
@@ -144,7 +144,7 @@ const AboutPage = () => {
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-950 leading-tight">
-              運営メンバー
+              運営
             </h2>
           </div>
 
@@ -155,7 +155,7 @@ const AboutPage = () => {
                 className="flex flex-col md:flex-row gap-8 md:gap-12 items-start bg-white rounded-2xl p-8 border border-gray-100"
               >
                 {/* 画像 */}
-                <div className="shrink-0">
+                {/* <div className="shrink-0">
                   <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden bg-gray-100">
                     <Image
                       alt={member.name}
@@ -165,7 +165,7 @@ const AboutPage = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                </div>
+                </div> */}
 
                 {/* テキスト */}
                 <div className="flex flex-col gap-4 flex-1">
