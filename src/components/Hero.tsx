@@ -5,7 +5,7 @@ import { Link as Scroll } from "react-scroll";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
-  const words = "デジタル化";
+  const words = "デジタル";
   const word = words.split("");
 
   const textanimate = word.map((word, index) => {
@@ -56,7 +56,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-extrabold text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1] text-gray-950"
             >
-              離島の未来を
+              離島の可能性を
               <br />
               <span className="relative inline-block mt-2">
                 <span className="relative z-10 text-cyan-600">
@@ -69,7 +69,7 @@ const Hero = () => {
                   className="absolute bottom-1 left-0 right-0 h-3 bg-cyan-100 z-0 origin-left"
                 />
               </span>
-              <span className="block mt-2">で加速する</span>
+              <span className="block mt-2">で広げていく</span>
             </motion.h1>
 
             {/* サブコピー */}
