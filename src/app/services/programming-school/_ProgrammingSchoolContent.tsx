@@ -98,7 +98,7 @@ const ProgrammingSchoolContent = () => {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbPage>プログラミングスクール</BreadcrumbPage>
+                <BreadcrumbPage>IT・AI教育</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -112,7 +112,7 @@ const ProgrammingSchoolContent = () => {
             >
               <div className="inline-flex items-center gap-2 bg-cyan-100 text-cyan-700 px-4 py-2 rounded-full text-sm font-medium">
                 <Code className="w-4 h-4" />
-                プログラミングスクール
+                IT・AI教育
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 leading-tight">
                 壱岐で、
