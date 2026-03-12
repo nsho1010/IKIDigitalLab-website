@@ -9,6 +9,78 @@ import { useToast } from "@/components/ui/use-toast";
 import { submitContactForm, ContactFormState } from "@/actions/contact";
 import { Send, Mail, User, MessageSquare, X } from "lucide-react";
 
+// リソース状況テーブルの設定
+const RESOURCES = [
+  { label: "稼働可能", emoji: "💻", available: [false, true, true] },
+];
+
+function getRecentMonths(): { label: string; month: number; year: number }[] {
+  const now = new Date();
+  return [1, 2, 3].map((offset) => {
+    const d = new Date(now.getFullYear(), now.getMonth() + offset, 1);
+    return {
+      label: `${d.getMonth() + 1}月`,
+      month: d.getMonth() + 1,
+      year: d.getFullYear(),
+    };
+  });
+}
+
+function ResourceTable() {
+  const months = getRecentMonths();
+  const currentDate = new Date();
+  const asOfLabel = `${currentDate.getFullYear()}年${currentDate.getMonth() + 1}月現在`;
+
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="rounded-2xl overflow-hidden border border-gray-200 bg-white">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-100">
+              <th className="py-3 px-5 text-left text-gray-500 font-medium w-48 border border-gray-200">
+                リソース / 月
+              </th>
+              {months.map((m) => (
+                <th
+                  key={m.label}
+                  className="py-3 px-4 text-center text-gray-500 font-medium border border-gray-200"
+                >
+                  {m.label}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {RESOURCES.map((resource) => (
+              <tr key={resource.label}>
+                <td className="py-4 px-5 font-medium text-gray-700 bg-gray-100 border border-gray-200">
+                  <span className="mr-2">{resource.emoji}</span>
+                  {resource.label}
+                </td>
+                {resource.available.map((avail, j) => (
+                  <td
+                    key={j}
+                    className="py-4 px-4 text-center bg-white border border-gray-200"
+                  >
+                    {avail ? (
+                      <span className="inline-block w-3 h-3 rounded-full bg-red-400" />
+                    ) : (
+                      <span className="inline-block text-yellow-400 text-base leading-none">
+                        ▲
+                      </span>
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="text-xs text-gray-400 text-right">※{asOfLabel}</p>
+    </div>
+  );
+}
+
 export default function Component() {
   const initialState: ContactFormState = {
     status: "idle",
@@ -97,7 +169,7 @@ export default function Component() {
     <section id="contact" className="py-24 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
         {/* ヘッダー */}
-        <div className="mb-16">
+        <div className="mb-12">
           <div className="flex items-center gap-2 mb-4">
             <span className="w-8 h-px bg-cyan-600" />
             <span className="text-xs font-semibold tracking-widest text-cyan-600 uppercase">
@@ -107,9 +179,25 @@ export default function Component() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-950 leading-tight">
             お問い合わせ
           </h2>
-          <p className="mt-4 text-sm text-gray-500 max-w-md leading-relaxed">
-            ご質問や相談事があれば、気軽にお問い合わせください。
-          </p>
+        </div>
+
+        {/* リソース状況 */}
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 mb-16 items-start">
+          {/* 左：説明テキスト */}
+          <div className="lg:w-72 shrink-0 flex flex-col gap-5">
+            <p className="text-sm text-gray-600 leading-relaxed">
+              直近3ヶ月のリソース状況です。
+              <br />
+              ご依頼やご相談など、
+              <br />
+              ぜひお気軽にお問い合わせください。
+            </p>
+          </div>
+
+          {/* 右：リソーステーブル */}
+          <div className="flex-1">
+            <ResourceTable />
+          </div>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
@@ -149,7 +237,7 @@ export default function Component() {
           </div>
 
           {/* 右側：フォーム */}
-          <div className="flex-1">
+          <div className="flex-1" id="contact-form">
             <div className="bg-white rounded-2xl border border-gray-100 p-8">
               <form
                 ref={formRef}
