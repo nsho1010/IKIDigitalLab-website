@@ -28,7 +28,7 @@ const serviceData = [
     tag: null,
   },
   {
-    name: "プログラミングスクール",
+    name: "IT・AI教育",
     description:
       "学びの場も提供しています。基礎から実務まで、壱岐で使えるスキルを身につけたい方向け。",
     image:
