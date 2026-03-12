@@ -5,7 +5,8 @@ const members = [
     name: "ナガムラ ショウヘイ",
     nameEn: "Shohei Nagamura",
     role: "代表 / Webエンジニア・DX推進",
-    description: "ベンチャー・スタートアップ企業にてWebエンジニアとして従事。",
+    description:
+      "ベンチャー・スタートアップ企業にてWebエンジニアとして従事。\n壱岐市と福岡の２地域居住生活。",
     image: "/myprofileimage.PNG",
     skills: ["Web開発", "DX推進", "学ぶ", "業務改善"],
   },
@@ -59,7 +60,7 @@ const Member = () => {
                   <p className="text-sm text-gray-400">{member.nameEn}</p>
                 </div>
 
-                <p className="text-sm text-gray-500 leading-relaxed max-w-prose">
+                <p className="text-sm text-gray-500 leading-relaxed max-w-prose whitespace-pre-line">
                   {member.description}
                 </p>
 
