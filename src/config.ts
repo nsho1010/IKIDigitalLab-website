@@ -22,10 +22,6 @@ const config = {
       label: "サービス",
     },
     {
-      href: "",
-      label: "学ぶ",
-    },
-    {
       href: "/#news",
       label: "お知らせ",
     },

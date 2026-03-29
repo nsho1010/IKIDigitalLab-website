@@ -9,7 +9,6 @@ import Image from "next/image";
 const navLinks = [
   { label: "トップ", to: "hero", href: "/" },
   { label: "サービス", to: "service", href: "/#service" },
-  { label: "学ぶ", to: null, href: "/coming-soon" },
   { label: "お知らせ", to: "news", href: "/news" },
   { label: "運営概要", to: "company-info", href: "/#company-info" },
   { label: "お問い合わせ", to: "contact", href: "/#contact" },
@@ -29,10 +28,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row gap-12 md:gap-16">
           {/* ブランド */}
           <div className="flex flex-col gap-4 md:w-64 shrink-0">
-            <Link
-              href="/"
-              className="flex items-center gap-2.5"
-            >
+            <Link href="/" className="flex items-center gap-2.5">
               <Image
                 alt="Logo"
                 src="/logo-preview-white.png"
