@@ -6,9 +6,9 @@ const members = [
     nameEn: "Shohei Nagamura",
     role: "代表 / Webエンジニア・DX推進",
     description:
-      "ベンチャー・スタートアップ企業にてWebエンジニアとして従事。\n壱岐市と福岡の２地域居住生活。",
+      "ベンチャー・スタートアップ企業にてWebエンジニアとして従事。\n壱岐市と福岡の2地域居住生活。",
     image: "/myprofileimage.PNG",
-    skills: ["Web開発", "DX推進", "学ぶ", "業務改善"],
+    skills: ["Web開発", "DX推進", "業務改善"],
   },
 ];
 

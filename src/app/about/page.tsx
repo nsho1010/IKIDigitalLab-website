@@ -28,7 +28,7 @@ const members = [
     description:
       "ベンチャー・スタートアップ企業にてWebエンジニアとして従事。\n壱岐市と福岡の２地域居住生活。",
     image: "/profile01.jpeg",
-    skills: ["Web開発", "DX推進", "学ぶ", "業務改善"],
+    skills: ["Web開発", "DX推進", "業務改善"],
   },
 ];
 

@@ -12,7 +12,6 @@ import { motion, useAnimation, AnimatePresence } from "framer-motion";
 const navLinks = [
   { label: "トップ", to: "hero", href: "/" },
   { label: "サービス", to: "service", href: "/#service" },
-  { label: "学ぶ", to: null, href: "/coming-soon" },
   { label: "お知らせ", to: "news", href: "/news" },
   { label: "運営概要", to: null, href: "/about" },
 ];
