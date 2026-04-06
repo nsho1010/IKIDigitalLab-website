@@ -2,6 +2,8 @@ import { Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import IntroScreen from "@/components/IntroScreen";
+import { featureFlags } from "@/lib/featureFlags";
 import { ThemeProvider } from "next-themes";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Noto_Sans_JP } from "next/font/google";
@@ -34,6 +36,7 @@ export default function RootLayout({
           attribute="class"
           disableTransitionOnChange
         >
+          {featureFlags.introScreen && <IntroScreen />}
           <Suspense>
             <Header />
           </Suspense>

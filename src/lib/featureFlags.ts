@@ -11,6 +11,7 @@ export const featureFlags = {
   programmingSchool:
     process.env.NEXT_PUBLIC_FEATURE_PROGRAMMING_SCHOOL === "true",
   itTraining: process.env.NEXT_PUBLIC_FEATURE_IT_TRAINING === "true",
+  introScreen: process.env.NEXT_PUBLIC_FEATURE_INTRO_SCREEN === "true",
 } as const;
 
 /**
