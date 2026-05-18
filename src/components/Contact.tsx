@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { submitContactForm, ContactFormState } from "@/actions/contact";
 import { Send, Mail, User, MessageSquare, X } from "lucide-react";
-import Image from "next/image";
+import LineAddFriendButton from "@/components/LineAddFriendButton";
 
 // リソース状況テーブルの設定
 const RESOURCES = [
@@ -253,19 +253,7 @@ export default function Component() {
                   <p className="text-xs text-gray-500 leading-relaxed">
                     LINEからもお気軽にご相談いただけます。
                   </p>
-                  <a
-                    href="https://lin.ee/qK9z3Wk"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Image
-                      src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"
-                      alt="友だち追加"
-                      width={104}
-                      height={28}
-                      unoptimized
-                    />
-                  </a>
+                  <LineAddFriendButton />
                 </div>
               </div>
             </div>
