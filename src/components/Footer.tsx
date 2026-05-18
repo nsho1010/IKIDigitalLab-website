@@ -89,6 +89,25 @@ const Footer = () => {
                 </Link>
               ))}
             </div>
+
+            <div className="flex flex-col gap-3">
+              <p className="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-1">
+                LINE
+              </p>
+              <a
+                href="https://lin.ee/qK9z3Wk"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"
+                  alt="友だち追加"
+                  width={104}
+                  height={28}
+                  unoptimized
+                />
+              </a>
+            </div>
           </div>
         </div>
 

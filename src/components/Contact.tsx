@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { submitContactForm, ContactFormState } from "@/actions/contact";
 import { Send, Mail, User, MessageSquare, X } from "lucide-react";
+import Image from "next/image";
 
 // リソース状況テーブルの設定
 const RESOURCES = [
@@ -233,6 +234,40 @@ export default function Component() {
                   </div>
                 </div>
               ))}
+
+              {/* LINE友だち追加 */}
+              <div className="flex gap-3 p-4 rounded-xl bg-white border border-gray-100">
+                <div className="shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-green-50">
+                  <svg
+                    className="w-4 h-4 text-green-500"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M12 2C6.48 2 2 6.03 2 11c0 2.7 1.26 5.12 3.25 6.79L4.5 22l4.36-2.28C9.85 19.89 10.91 20 12 20c5.52 0 10-4.03 10-9s-4.48-9-10-9z" />
+                  </svg>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <p className="text-sm font-semibold text-gray-800">
+                    LINEで相談
+                  </p>
+                  <p className="text-xs text-gray-500 leading-relaxed">
+                    LINEからもお気軽にご相談いただけます。
+                  </p>
+                  <a
+                    href="https://lin.ee/qK9z3Wk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"
+                      alt="友だち追加"
+                      width={104}
+                      height={28}
+                      unoptimized
+                    />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
