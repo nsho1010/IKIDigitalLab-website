@@ -5,6 +5,7 @@ import { Link as Scroll } from "react-scroll";
 import { usePathname } from "next/navigation";
 import config from "@/config";
 import Image from "next/image";
+import LineAddFriendButton from "@/components/LineAddFriendButton";
 
 const navLinks = [
   { label: "トップ", to: "hero", href: "/" },
@@ -88,6 +89,13 @@ const Footer = () => {
                   {label}
                 </Link>
               ))}
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <p className="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-1">
+                LINE
+              </p>
+              <LineAddFriendButton />
             </div>
           </div>
         </div>
