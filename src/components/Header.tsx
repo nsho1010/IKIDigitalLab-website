@@ -116,7 +116,7 @@ const Header = () => {
               <Scroll to="contact" smooth={true} offset={-100}>
                 <Button
                   size="sm"
-                  className="rounded-xl px-5 bg-gray-950 text-white hover:bg-gray-800 transition-all duration-300 font-semibold"
+                  className="rounded-sm px-5 bg-gray-950 text-white hover:bg-gray-800 transition-all duration-300 font-semibold"
                 >
                   お問い合わせ
                 </Button>
@@ -125,7 +125,7 @@ const Header = () => {
               <Link href="/#contact">
                 <Button
                   size="sm"
-                  className="rounded-xl px-5 bg-gray-950 text-white hover:bg-gray-800 transition-all duration-300 font-semibold"
+                  className="rounded-sm px-5 bg-gray-950 text-white hover:bg-gray-800 transition-all duration-300 font-semibold"
                 >
                   お問い合わせ
                 </Button>
@@ -231,13 +231,13 @@ const Header = () => {
                     offset={-40}
                     onClick={closeMenu}
                   >
-                    <Button className="w-full rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-semibold transition-all duration-300">
+                    <Button className="w-full rounded-sm bg-cyan-600 hover:bg-cyan-500 text-white font-semibold transition-all duration-300">
                       お問い合わせ
                     </Button>
                   </Scroll>
                 ) : (
                   <Link href="/#contact" onClick={closeMenu}>
-                    <Button className="w-full rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-semibold transition-all duration-300">
+                    <Button className="w-full rounded-sm bg-cyan-600 hover:bg-cyan-500 text-white font-semibold transition-all duration-300">
                       お問い合わせ
                     </Button>
                   </Link>
