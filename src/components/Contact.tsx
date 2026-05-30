@@ -342,7 +342,7 @@ export default function Component() {
 
                 <div className="flex justify-end pt-2">
                   <Button
-                    className="px-8 rounded-xl font-semibold bg-gray-950 hover:bg-gray-800 text-white transition-all duration-300"
+                    className="px-8 rounded-sm font-semibold bg-gray-950 hover:bg-gray-800 text-white transition-all duration-300"
                     type="submit"
                   >
                     <Send className="w-4 h-4 mr-2" />
@@ -376,14 +376,14 @@ export default function Component() {
                 type="button"
                 variant="outline"
                 onClick={() => setShowModal(false)}
-                className="rounded-xl px-6 border-gray-200"
+                className="rounded-sm px-6 border-gray-200"
               >
                 キャンセル
               </Button>
               <Button
                 type="button"
                 onClick={handleConfirmedSubmit}
-                className="rounded-xl px-6 bg-gray-950 hover:bg-gray-800 text-white"
+                className="rounded-sm px-6 bg-gray-950 hover:bg-gray-800 text-white"
               >
                 送信する
               </Button>
