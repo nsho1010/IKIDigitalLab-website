@@ -33,11 +33,11 @@ const Member = () => {
           {members.map((member) => (
             <div
               key={member.name}
-              className="flex flex-col md:flex-row gap-8 md:gap-12 items-start bg-white rounded-2xl p-8 border border-gray-100"
+              className="flex flex-col md:flex-row gap-8 md:gap-12 items-start bg-white rounded-lg p-8 border border-gray-100"
             >
               {/* 画像 */}
               <div className="shrink-0">
-                <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden bg-gray-100">
+                <div className="w-24 h-24 md:w-32 md:h-32 rounded-lg overflow-hidden bg-gray-100">
                   <Image
                     alt={member.name}
                     src={member.image}

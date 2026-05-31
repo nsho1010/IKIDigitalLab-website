@@ -89,7 +89,7 @@ export default function IntroScreen() {
             initial={{ opacity: 0, scale: 0.96, y: 16 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative w-full max-w-xl mx-4 rounded-2xl overflow-hidden shadow-2xl border border-gray-700/60"
+            className="relative w-full max-w-xl mx-4 rounded-lg overflow-hidden shadow-2xl border border-gray-700/60"
             style={{ background: "#0f172a" }}
           >
             {/* タイトルバー */}

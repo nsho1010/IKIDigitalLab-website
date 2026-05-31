@@ -140,7 +140,7 @@ const Hero = () => {
             className="flex-1 relative w-full max-w-xl lg:max-w-none"
           >
             <div className="relative">
-              <div className="relative z-10 rounded-3xl overflow-hidden bg-gray-50">
+              <div className="relative z-10 rounded-lg overflow-hidden bg-gray-50">
                 <Image
                   src="/hero.png"
                   alt="Hero画像"

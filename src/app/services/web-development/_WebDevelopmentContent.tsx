@@ -138,7 +138,7 @@ const WebDevelopmentContent = () => {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="flex-shrink-0 w-full max-w-xs lg:max-w-sm"
             >
-              <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200">
+              <div className="bg-white rounded-md overflow-hidden shadow-lg border border-gray-200">
                 <div className="flex items-center gap-2 px-4 py-3 bg-gray-100">
                   <div className="w-3 h-3 rounded-full bg-red-400" />
                   <div className="w-3 h-3 rounded-full bg-yellow-400" />
@@ -197,7 +197,7 @@ const WebDevelopmentContent = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
-              className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
+              className="bg-white rounded-lg p-8 shadow-sm border border-gray-100"
             >
               <h3 className="text-xl font-bold text-gray-900 mb-3">{serviceTypes[activeTab].title}</h3>
               <p className="text-gray-600 leading-relaxed mb-6">{serviceTypes[activeTab].description}</p>
@@ -236,7 +236,7 @@ const WebDevelopmentContent = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:border-cyan-400 hover:shadow-md transition-all duration-300 overflow-hidden"
+                className="relative p-6 rounded-md border border-slate-200 bg-white shadow-sm hover:border-cyan-400 hover:shadow-md transition-all duration-300 overflow-hidden"
               >
                 <span className="absolute top-3 right-4 text-6xl font-black text-slate-100 select-none leading-none">
                   {item.num}
@@ -332,7 +332,7 @@ const WebDevelopmentContent = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.06 }}
-                className="border border-gray-200 rounded-xl overflow-hidden"
+                className="border border-gray-200 rounded-md overflow-hidden"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}

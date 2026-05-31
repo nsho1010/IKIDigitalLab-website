@@ -146,7 +146,7 @@ const ProgrammingSchoolContent = () => {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="flex-shrink-0 w-full max-w-xs lg:max-w-sm font-mono"
             >
-              <div className="bg-slate-700 rounded-xl overflow-hidden shadow-2xl border border-slate-600">
+              <div className="bg-slate-700 rounded-md overflow-hidden shadow-2xl border border-slate-600">
                 <div className="flex items-center gap-2 px-4 py-3 bg-slate-600">
                   <div className="w-3 h-3 rounded-full bg-red-500/70" />
                   <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
@@ -189,7 +189,7 @@ const ProgrammingSchoolContent = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-slate-600 rounded-xl p-6 border border-slate-600 flex gap-4 items-start hover:border-cyan-500/40 transition-colors duration-300"
+                className="bg-slate-600 rounded-md p-6 border border-slate-600 flex gap-4 items-start hover:border-cyan-500/40 transition-colors duration-300"
               >
                 <div className="flex-shrink-0 w-12 h-12 bg-slate-600 rounded-full flex items-center justify-center">
                   {target.icon}
@@ -227,7 +227,7 @@ const ProgrammingSchoolContent = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="flex-1 rounded-2xl overflow-hidden border border-slate-600 bg-slate-700"
+                className="flex-1 rounded-lg overflow-hidden border border-slate-600 bg-slate-700"
               >
                 <div className="px-5 py-3 bg-slate-600 font-bold text-sm flex justify-between items-center">
                   <span className="text-cyan-400">{level.step}</span>
@@ -317,7 +317,7 @@ const ProgrammingSchoolContent = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex flex-col"
               >
-                <div className="bg-slate-700 rounded-2xl rounded-tl-none p-5 flex-1 border border-slate-600">
+                <div className="bg-slate-700 rounded-lg rounded-tl-none p-5 flex-1 border border-slate-600">
                   <p className="text-zinc-300 text-sm leading-relaxed">{voice.text}</p>
                 </div>
                 <div className="mt-3 pl-4 text-xs text-zinc-600">{voice.attr}</div>
@@ -349,7 +349,7 @@ const ProgrammingSchoolContent = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.06 }}
-                className="border border-slate-600 bg-slate-700 rounded-xl overflow-hidden"
+                className="border border-slate-600 bg-slate-700 rounded-md overflow-hidden"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}

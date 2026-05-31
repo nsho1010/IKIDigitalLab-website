@@ -58,7 +58,7 @@ const ServiceCard = ({
   index: number;
 }) => {
   const cardContent = (
-    <div className="group relative flex flex-col h-full rounded-2xl overflow-hidden border border-gray-100 hover:border-gray-200 bg-white hover:shadow-xl hover:shadow-gray-100/80 transition-all duration-500">
+    <div className="group relative flex flex-col h-full rounded-lg overflow-hidden border border-gray-100 hover:border-gray-200 bg-white hover:shadow-xl hover:shadow-gray-100/80 transition-all duration-500">
       {/* 画像 */}
       <div className="relative h-48 overflow-hidden bg-gray-100 shrink-0">
         <Image

@@ -79,7 +79,7 @@ const NewsListPage = async ({
                 <Link
                   key={news.id}
                   href={`/news/${news.id}`}
-                  className="group flex flex-col sm:flex-row sm:items-center gap-4 py-7 hover:bg-gray-50/80 -mx-4 px-4 rounded-xl transition-colors duration-200"
+                  className="group flex flex-col sm:flex-row sm:items-center gap-4 py-7 hover:bg-gray-50/80 -mx-4 px-4 rounded-md transition-colors duration-200"
                 >
                   <time
                     className="shrink-0 text-sm font-medium text-gray-400 w-28"
@@ -107,7 +107,7 @@ const NewsListPage = async ({
             )}
           </>
         ) : (
-          <div className="rounded-2xl border border-dashed border-gray-200 bg-gray-50 py-24 px-6 flex flex-col items-center gap-4 text-center">
+          <div className="rounded-lg border border-dashed border-gray-200 bg-gray-50 py-24 px-6 flex flex-col items-center gap-4 text-center">
             <div className="flex items-center gap-2">
               <span className="w-8 h-px bg-cyan-600" />
               <span className="text-xs font-semibold tracking-widest text-cyan-600 uppercase">

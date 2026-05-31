@@ -139,7 +139,7 @@ const ItTrainingContent = () => {
               className="flex flex-row lg:flex-col gap-4 flex-shrink-0"
             >
               {highlights.map((h) => (
-                <div key={h.label} className="bg-white border border-cyan-200 rounded-xl px-6 py-4 text-center min-w-[100px] shadow-sm">
+                <div key={h.label} className="bg-white border border-cyan-200 rounded-md px-6 py-4 text-center min-w-[100px] shadow-sm">
                   <div className="text-2xl font-black text-cyan-600">{h.value}</div>
                   <div className="text-gray-500 text-xs mt-1">{h.label}</div>
                 </div>
@@ -164,7 +164,7 @@ const ItTrainingContent = () => {
             </h2>
             <p className="text-gray-600 text-base md:text-lg">組み合わせ・カスタマイズも可能です。</p>
           </motion.div>
-          <div className="border border-gray-200 rounded-2xl overflow-hidden">
+          <div className="border border-gray-200 rounded-lg overflow-hidden">
             {menuItems.map((item, index) => (
               <motion.div
                 key={index}
@@ -214,7 +214,7 @@ const ItTrainingContent = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl border-t-4 border-cyan-400 p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
+                className="bg-white rounded-md border-t-4 border-cyan-400 p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
               >
                 <div className="w-12 h-12 bg-cyan-50 rounded-lg flex items-center justify-center mb-4">
                   {point.icon}
@@ -259,7 +259,7 @@ const ItTrainingContent = () => {
                     className={`flex items-center gap-8 ${isLeft ? "flex-row" : "flex-row-reverse"}`}
                   >
                     <div className="flex-1">
-                      <div className={`bg-white border border-cyan-100 rounded-xl p-6 shadow-sm hover:border-cyan-300 transition-colors ${isLeft ? "text-right" : "text-left"}`}>
+                      <div className={`bg-white border border-cyan-100 rounded-md p-6 shadow-sm hover:border-cyan-300 transition-colors ${isLeft ? "text-right" : "text-left"}`}>
                         <div className="text-xs text-cyan-500 font-medium mb-1">STEP {index + 1}</div>
                         <h3 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
                         <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
@@ -347,7 +347,7 @@ const ItTrainingContent = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.06 }}
-                className="border border-gray-200 rounded-xl overflow-hidden"
+                className="border border-gray-200 rounded-md overflow-hidden"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
