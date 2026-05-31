@@ -1,0 +1,1 @@
+- [Project Test Conventions](project-test-conventions.md) — Vitestディレクトリ構成・globals設定・モジュールレベル環境変数テストのパターン
