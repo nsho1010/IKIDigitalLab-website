@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.command' | grep -qE '(^|[;&|`(]|\\s)rm\\s[^\\n]*-(([a-zA-Z]*r[a-zA-Z]*f)|([a-zA-Z]*f[a-zA-Z]*r))' && echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"deny\",\"permissionDecisionReason\":\"rm -rf は危険なため自動ブロックされました。ファイル削除には rm -i または trash コマンドを使用してください。\"}}' || true",
+            "statusMessage": "rm -rf チェック中..."
+          }
+        ]
+      }
+    ]
+  }
+}
