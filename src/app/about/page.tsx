@@ -99,7 +99,7 @@ const AboutPage = () => {
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
             {/* マップ */}
             <div className="w-full lg:w-1/2 shrink-0">
-              <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+              <div className="rounded-lg overflow-hidden border border-gray-100 shadow-sm">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6635.037567898468!2d129.67908911499234!3d33.74725761365943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356a152dd77d1c2b%3A0xf76c730b62764b90!2z44CSODExLTUxMzUg6ZW35bSO55yM5aOx5bKQ5biC6YO344OO5rWm55S66YO344OO5rWm!5e0!3m2!1sja!2sjp!4v1723188274913!5m2!1sja!2sjp"
                   width="100%"
@@ -153,7 +153,7 @@ const AboutPage = () => {
             {members.map((member) => (
               <div
                 key={member.name}
-                className="flex flex-col md:flex-row gap-8 md:gap-12 items-start bg-white rounded-2xl p-8 border border-gray-100"
+                className="flex flex-col md:flex-row gap-8 md:gap-12 items-start bg-white rounded-lg p-8 border border-gray-100"
               >
                 {/* 画像 */}
                 {/* <div className="shrink-0">

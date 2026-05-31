@@ -13,7 +13,7 @@ const CtaBanner = () => {
       className="py-24 px-6"
     >
       <div className="max-w-4xl mx-auto">
-        <div className="rounded-3xl bg-gray-950 px-8 py-16 md:px-16 text-center flex flex-col items-center gap-8 relative overflow-hidden">
+        <div className="rounded-lg bg-gray-950 px-8 py-16 md:px-16 text-center flex flex-col items-center gap-8 relative overflow-hidden">
           {/* 背景装飾 */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none" />
 

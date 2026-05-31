@@ -66,12 +66,12 @@ const Problem = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="bg-gray-50 p-8 rounded-2xl group hover:bg-gray-100 transition-colors duration-300"
+              className="bg-gray-50 p-8 rounded-lg group hover:bg-gray-100 transition-colors duration-300"
             >
               <div className="flex flex-col gap-4">
                 {/* 番号 + アイコン */}
                 <div className="flex items-center justify-between">
-                  <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-cyan-50 border border-cyan-100 group-hover:border-cyan-300 transition-colors duration-300">
+                  <div className="w-10 h-10 flex items-center justify-center rounded-md bg-cyan-50 border border-cyan-100 group-hover:border-cyan-300 transition-colors duration-300">
                     {problem.icon}
                   </div>
                   <span className="text-5xl font-black text-gray-200 leading-none select-none group-hover:text-gray-300 transition-colors">

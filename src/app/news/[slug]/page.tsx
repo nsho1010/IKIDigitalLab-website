@@ -131,7 +131,7 @@ const NewsDetailPage = async ({ params }: { params: { slug: string } }) => {
       {/* 記事本文 */}
       <div className="max-w-4xl mx-auto px-6 lg:px-12 py-16">
         {data.thumbnail && (
-          <div className="mb-12 rounded-2xl overflow-hidden">
+          <div className="mb-12 rounded-lg overflow-hidden">
             <Image
               src={data.thumbnail.url}
               alt={data.title}
@@ -143,7 +143,7 @@ const NewsDetailPage = async ({ params }: { params: { slug: string } }) => {
           </div>
         )}
 
-        <article className="prose prose-slate max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-a:text-cyan-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-pre:rounded-xl">
+        <article className="prose prose-slate max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-a:text-cyan-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-md prose-pre:rounded-md">
           {content}
         </article>
 

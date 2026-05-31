@@ -34,7 +34,7 @@ function ResourceTable() {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="rounded-2xl overflow-hidden border border-gray-200 bg-white">
+      <div className="rounded-lg overflow-hidden border border-gray-200 bg-white">
         <table className="w-full text-sm border-collapse">
           <thead>
             <tr className="bg-gray-100">
@@ -219,7 +219,7 @@ export default function Component() {
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="flex gap-3 p-4 rounded-xl bg-white border border-gray-100"
+                  className="flex gap-3 p-4 rounded-md bg-white border border-gray-100"
                 >
                   <div className="shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-cyan-50">
                     {item.icon}
@@ -236,7 +236,7 @@ export default function Component() {
               ))}
 
               {/* LINE友だち追加 */}
-              <div className="flex gap-3 p-4 rounded-xl bg-white border border-gray-100">
+              <div className="flex gap-3 p-4 rounded-md bg-white border border-gray-100">
                 <div className="shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-green-50">
                   <svg
                     className="w-4 h-4 text-green-500"
@@ -261,7 +261,7 @@ export default function Component() {
 
           {/* 右側：フォーム */}
           <div className="flex-1" id="contact-form">
-            <div className="bg-white rounded-2xl border border-gray-100 p-8">
+            <div className="bg-white rounded-lg border border-gray-100 p-8">
               <form
                 ref={formRef}
                 className="flex flex-col gap-6"
@@ -358,7 +358,7 @@ export default function Component() {
       {/* 確認モーダル */}
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full mx-4">
+          <div className="bg-white rounded-lg shadow-2xl p-8 max-w-sm w-full mx-4">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-lg font-bold text-gray-950">送信確認</h3>
               <button

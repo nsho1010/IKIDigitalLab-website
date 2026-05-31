@@ -238,7 +238,7 @@ const DxAiSupportContent = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm border border-amber-100"
+                  className="flex items-start gap-3 bg-white rounded-md p-4 shadow-sm border border-amber-100"
                 >
                   <CheckCircle className="w-5 h-5 text-gray-300 flex-shrink-0 mt-0.5" />
                   <span className="text-gray-700 text-sm leading-relaxed">{concern}</span>
@@ -277,7 +277,7 @@ const DxAiSupportContent = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex gap-4 p-6 rounded-xl border border-gray-100 bg-gray-50 hover:border-cyan-200 hover:bg-cyan-50/30 transition-colors duration-300"
+                className="flex gap-4 p-6 rounded-md border border-gray-100 bg-gray-50 hover:border-cyan-200 hover:bg-cyan-50/30 transition-colors duration-300"
               >
                 <div className="flex-shrink-0 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
                   {item.icon}
@@ -317,7 +317,7 @@ const DxAiSupportContent = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="bg-white rounded-xl p-6 border-l-4 border-cyan-400 shadow-sm hover:shadow-md transition-shadow duration-300"
+                className="bg-white rounded-md p-6 border-l-4 border-cyan-400 shadow-sm hover:shadow-md transition-shadow duration-300"
               >
                 <div className="text-2xl mb-3">{topic.icon}</div>
                 <h3 className="text-base font-bold text-gray-900 mb-2">{topic.title}</h3>
@@ -395,7 +395,7 @@ const DxAiSupportContent = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
-                className="bg-white border border-gray-200 rounded-xl p-6 hover:border-cyan-200 transition-colors duration-300"
+                className="bg-white border border-gray-200 rounded-md p-6 hover:border-cyan-200 transition-colors duration-300"
               >
                 <h3 className="text-base font-bold text-gray-900 mb-3 flex items-start gap-2">
                   <span className="text-cyan-600 font-bold text-lg leading-none mt-0.5">Q.</span>
