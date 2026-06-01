@@ -3,8 +3,6 @@
 import Link from "next/link";
 import { Link as Scroll } from "react-scroll";
 import { usePathname } from "next/navigation";
-import config from "@/config";
-import Image from "next/image";
 import LineAddFriendButton from "@/components/LineAddFriendButton";
 
 const navLinks = [
