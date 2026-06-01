@@ -70,7 +70,7 @@ const Benefits = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative flex flex-col gap-6 p-8 rounded-lg border border-gray-100 hover:border-cyan-200 hover:shadow-lg hover:shadow-cyan-50 transition-all duration-300 bg-white"
+              className="group relative flex flex-col gap-6 p-8 border border-gray-100 hover:border-cyan-200 hover:shadow-lg hover:shadow-cyan-50 transition-all duration-300 bg-white"
             >
               {/* 番号 */}
               <span className="absolute top-6 right-6 text-4xl font-black text-gray-100 leading-none select-none group-hover:text-cyan-50 transition-colors">
