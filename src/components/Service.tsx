@@ -57,58 +57,68 @@ const ServiceCard = ({
   service: (typeof serviceData)[0];
   index: number;
 }) => {
-  const cardContent = (
-    <div className="group relative flex flex-col h-full rounded-lg overflow-hidden border border-gray-100 hover:border-gray-200 bg-white hover:shadow-xl hover:shadow-gray-100/80 transition-all duration-500">
-      {/* 画像 */}
-      <div className="relative h-48 overflow-hidden bg-gray-100 shrink-0">
-        <Image
-          alt={service.name}
-          src={service.image}
-          fill
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
-          priority={index === 0}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-950/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        {service.tag && (
-          <span className="absolute top-3 left-3 text-xs font-semibold bg-cyan-600 text-white px-2.5 py-1 rounded-full">
-            {service.tag}
-          </span>
-        )}
-      </div>
+  const isEven = index % 2 === 0;
 
-      {/* コンテンツ */}
-      <div className="flex flex-col flex-1 p-6 gap-3">
-        <h3 className="text-base font-bold text-gray-950 leading-snug group-hover:text-cyan-600 transition-colors duration-300">
-          {service.name}
-        </h3>
-        <p className="text-sm text-gray-500 leading-relaxed flex-1">
-          {service.description}
-        </p>
-        {service.url && (
-          <div className="flex items-center gap-1 text-xs font-semibold text-cyan-600 mt-2 group/link">
-            <span>サービスページへ</span>
-            <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </div>
-        )}
-      </div>
+  const imageBlock = (
+    <div className="relative w-full md:w-1/2 shrink-0 overflow-hidden bg-gray-100" style={{ minHeight: "320px" }}>
+      <Image
+        alt={service.name}
+        src={service.image}
+        fill
+        className="object-cover transition-transform duration-700 group-hover:scale-105"
+        priority={index === 0}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-950/40 to-transparent" />
+      {service.tag && (
+        <span className="absolute top-4 left-4 text-xs font-semibold bg-cyan-600 text-white px-3 py-1.5 rounded-full">
+          {service.tag}
+        </span>
+      )}
+      <span className="absolute bottom-4 left-4 text-5xl font-black text-white/20 leading-none select-none tabular-nums">
+        {String(index + 1).padStart(2, "0")}
+      </span>
+    </div>
+  );
+
+  const textBlock = (
+    <div className="flex flex-col justify-center gap-5 w-full md:w-1/2 px-2 md:px-8 py-8 md:py-0">
+      <h3 className="text-2xl md:text-3xl font-bold text-gray-950 leading-snug group-hover:text-cyan-600 transition-colors duration-300">
+        {service.name}
+      </h3>
+      <p className="text-sm md:text-base text-gray-500 leading-relaxed">
+        {service.description}
+      </p>
+      {service.url && (
+        <div className="flex items-center gap-1.5 text-sm font-semibold text-cyan-600">
+          <span>サービスページへ</span>
+          <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </div>
+      )}
+    </div>
+  );
+
+  const inner = (
+    <div
+      className={`group flex flex-col md:flex-row ${isEven ? "" : "md:flex-row-reverse"} items-stretch gap-0 md:gap-8 bg-white overflow-hidden border border-gray-100 hover:border-cyan-100 hover:shadow-2xl hover:shadow-cyan-50/60 transition-all duration-500 p-6 md:p-8`}
+    >
+      {imageBlock}
+      {textBlock}
     </div>
   );
 
   return (
     <motion.div
-      key={service.name || index}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
-      viewport={{ once: true }}
-      className="h-full"
+      initial={{ opacity: 0, x: isEven ? -32 : 32 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+      viewport={{ once: true, margin: "-80px" }}
     >
       {service.url ? (
-        <Link href={service.url} className="block h-full">
-          {cardContent}
+        <Link href={service.url} className="block">
+          {inner}
         </Link>
       ) : (
-        cardContent
+        inner
       )}
     </motion.div>
   );
@@ -117,7 +127,7 @@ const ServiceCard = ({
 const Service = () => {
   return (
     <section id="service" className="py-24 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-6 lg:px-12">
+      <div className="max-w-5xl mx-auto px-6 lg:px-12">
         {/* ヘッダー */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -144,8 +154,8 @@ const Service = () => {
           </p>
         </motion.div>
 
-        {/* カードグリッド */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {/* 交互レイアウト */}
+        <div className="flex flex-col gap-6">
           {serviceData.map((service, index) => (
             <ServiceCard key={service.name || index} service={service} index={index} />
           ))}
