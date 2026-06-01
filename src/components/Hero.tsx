@@ -89,14 +89,6 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.45 }}
               className="flex flex-col sm:flex-row gap-3"
             >
-              <Scroll to="contact" smooth={true} offset={-100}>
-                <Button
-                  size="lg"
-                  className="bg-gray-950 text-white hover:bg-gray-800 transition-all duration-300 px-8 rounded-sm font-semibold tracking-wide"
-                >
-                  お問い合わせ
-                </Button>
-              </Scroll>
               <Scroll to="service" smooth={true} offset={-80}>
                 <Button
                   size="lg"

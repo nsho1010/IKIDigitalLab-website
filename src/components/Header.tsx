@@ -10,7 +10,7 @@ import config from "@/config";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "トップ", to: "hero", href: "/" },
+  { label: "ホーム", to: "hero", href: "/" },
   { label: "サービス", to: "service", href: "/#service" },
   { label: "お知らせ", to: "news", href: "/news" },
   { label: "運営概要", to: null, href: "/about" },
@@ -66,14 +66,14 @@ const Header = () => {
         }`}
       >
         <nav
-          className="max-w-6xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16"
+          className="max-w-6xl mx-auto px-6 lg:px-12 flex items-stretch justify-between h-16"
           aria-label="Global"
         >
           {/* ロゴ */}
           <Link
             href="/"
             title={config.appName}
-            className="flex items-center gap-2 shrink-0"
+            className="flex items-center gap-2 shrink-0 self-center"
           >
             <Image
               alt="Logo"
@@ -88,7 +88,7 @@ const Header = () => {
           </Link>
 
           {/* デスクトップナビ */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-8 self-center">
             {navLinks.map(({ label, to, href }) => {
               const linkClass =
                 "text-sm font-medium text-gray-600 hover:text-gray-950 transition-colors duration-200";
@@ -111,21 +111,24 @@ const Header = () => {
                 </Link>
               );
             })}
+          </div>
 
+          {/* お問い合わせボタン（ヘッダーと同高さ） */}
+          <div className="hidden md:flex self-stretch">
             {pathname === "/" ? (
-              <Scroll to="contact" smooth={true} offset={-100}>
+              <Scroll to="contact" smooth={true} offset={-100} className="flex items-stretch">
                 <Button
                   size="sm"
-                  className="rounded-sm px-5 bg-gray-950 text-white hover:bg-gray-800 transition-all duration-300 font-semibold"
+                  className="h-full rounded-none px-6 bg-gray-950 text-white hover:bg-gray-800 transition-all duration-300 font-semibold"
                 >
                   お問い合わせ
                 </Button>
               </Scroll>
             ) : (
-              <Link href="/#contact">
+              <Link href="/#contact" className="flex items-stretch">
                 <Button
                   size="sm"
-                  className="rounded-sm px-5 bg-gray-950 text-white hover:bg-gray-800 transition-all duration-300 font-semibold"
+                  className="h-full rounded-none px-6 bg-gray-950 text-white hover:bg-gray-800 transition-all duration-300 font-semibold"
                 >
                   お問い合わせ
                 </Button>

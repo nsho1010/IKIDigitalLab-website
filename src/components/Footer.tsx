@@ -8,7 +8,7 @@ import Image from "next/image";
 import LineAddFriendButton from "@/components/LineAddFriendButton";
 
 const navLinks = [
-  { label: "トップ", to: "hero", href: "/" },
+  { label: "ホーム", to: "hero", href: "/" },
   { label: "サービス", to: "service", href: "/#service" },
   { label: "お知らせ", to: "news", href: "/news" },
   { label: "運営概要", to: "company-info", href: "/#company-info" },
